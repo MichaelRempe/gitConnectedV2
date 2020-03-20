@@ -1,0 +1,45 @@
+.HomeImage {
+  height: 700px;
+  background-size: cover; 
+  background-position: center;
+  position: relative;
+}
+
+.HomeImage::after {
+  content: "";
+  display: block;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+}
+
+.HomeImage * {
+  position: relative;
+  z-index: 2;
+}
+
+.HomeImage h1, .HomeImage h2, p {
+  color: white;
+}
+
+.HomeImage h1 {
+  font-size: 60px;
+  padding-top: 140px;
+  margin-top: 0;
+}
+
+.buttons {
+  padding-top: 45px;
+}
+
+.quickstart-user-details-container {
+  color: white;
+}
+
+#quickstart-account-details {
+  background-color: white;
+}

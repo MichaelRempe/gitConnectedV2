@@ -1,0 +1,42 @@
+.DevProfileImage {
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.DevProfileImage::after {
+  content: "";
+  display: block;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+}
+
+.DevProfileImage * {
+  position: relative;
+  z-index: 2;
+}
+
+.DevProfileImage h1 {
+  color: white;
+}
+
+.DevProfileImage h1 {
+  font-size: 60px;
+  padding-top: 60px;
+  margin-top: 0;
+}
+
+label {
+  color: white;
+}
+
+.allCards {
+  padding-top: 80px;
+}
+

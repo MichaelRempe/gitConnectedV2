@@ -1,0 +1,46 @@
+.PostJobImage {
+  height: 900px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.PostJobImage::after {
+  content: "";
+  display: block;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+}
+
+.PostJobImage * {
+  position: relative;
+  z-index: 2;
+}
+
+.PostJobImage h1, .PostJobImage h2 {
+  color: white;
+}
+
+.PostJobImage h1 {
+  font-size: 60px;
+  padding-top: 50px;
+  margin-top: 0;
+}
+
+.accountForm {
+  padding-top: 40px;
+  width: 550px;
+  height: 450px;
+  margin: auto;
+  position: relative;
+}
+
+label {
+  color: white;
+  
+}
