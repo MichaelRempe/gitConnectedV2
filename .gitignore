@@ -27,3 +27,6 @@ auth_config.json
 # dotenv environment variables file
 .env
 .env.test
+
+# firebase
+client/src/firebase-config.js
