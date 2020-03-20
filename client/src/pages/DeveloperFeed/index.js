@@ -7,6 +7,7 @@ import PopUpPanel from "../../components/PopUpPanel";
 import HomeButton from "../../components/ButtonHome";
 import ProfileButton from "../../components/ButtonProfile";
 
+import UserInfo from "../../components/UserInfo";
 import JobCard from "../../components/JobCard";
 import JobDetails from "../../components/JobDetails";
 
@@ -48,6 +49,7 @@ function DeveloperFeed(props) {
     >
       <div className="row">
         <LeftPanel>
+          <UserInfo />
           <HomeButton />
           <ProfileButton />
         </LeftPanel>
