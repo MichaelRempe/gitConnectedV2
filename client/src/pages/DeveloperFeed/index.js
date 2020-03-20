@@ -25,7 +25,7 @@ function DeveloperFeed(props) {
   //On page load, pull in jobs from API
   useEffect(() => {
     loadJobs();
-  });
+  }, []);
 
   //access API and gather JOBS
   function loadJobs() {
