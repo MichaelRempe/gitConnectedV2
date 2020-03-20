@@ -1,13 +1,13 @@
 import React from "react";
-import JobDetails from "../JobDetails/JobDetails";
 import { Link, Route } from "react-router-dom";
+import "./style.css";
 // import nextId from "react-id-generator";
 
 
 function JobCard(props) {
   return (
     <>
-      <div className="card" style={{width: "75%", margin: "auto", marginBottom: "20px", marginTop: "20px"}}>
+      <div className="card">
         <div className="card-header">Company Name</div>
         <div className="card-body">
           <h5 className="card-title">{props.data.title}</h5>

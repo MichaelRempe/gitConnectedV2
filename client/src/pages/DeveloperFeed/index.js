@@ -7,29 +7,72 @@ import PopUpPanel from "../../components/PopUpPanel";
 import HomeButton from "../../components/ButtonHome";
 import ProfileButton from "../../components/ButtonProfile";
 
+import JobCard from "../../components/JobCard";
+import JobDetails from "../../components/JobDetails";
 
 //Style:
 import background from "../../assets/developerFeed-bg.png";
 import "./style.css";
 
+// API:
+import API from "../../utils/API";
+
 function DeveloperFeed(props) {
-   return (
-     <div className="container-fluid">
-       <div className="row">
-         <LeftPanel>
-           <HomeButton />
-           <ProfileButton />
-         </LeftPanel>
-         
-         <MainPanel>
+  const [jobList, setJobList] = useState([]);
+  const [activeJob, setActiveJob] = useState([]);
 
-         </MainPanel>
-         <PopUpPanel>
+  //On page load, pull in jobs from API
+  useEffect(() => {
+    loadJobs();
+  });
 
-         </PopUpPanel>
-       </div>
-     </div>
-   )
+  //access API and gather JOBS
+  function loadJobs() {
+    API.getAllJobs()
+      .then(data => setJobList(data.data))
+      .catch(err => console.log(err));
+  }
+  // Set Active Job in popUP panel
+  const populateActiveJob = id => {
+    jobList.map(job => {
+      if (job._id === id) {
+        setActiveJob(job);
+      }
+    });
+  };
+
+  return (
+    <div
+      className="container-fluid DevBackgroundImage"
+      style={{ backgroundImage: `url(${background})` }}
+    >
+      <div className="row">
+        <LeftPanel>
+          <HomeButton />
+          <ProfileButton />
+        </LeftPanel>
+
+        <MainPanel>
+          {jobList.map(job => (
+            <JobCard
+              setActive={populateActiveJob}
+              url={props.match.url}
+              data={job}
+              key={job._id}
+            />
+          ))}
+        </MainPanel>
+
+        <PopUpPanel>
+          <Route
+            exact
+            path={`${props.match.url}/${activeJob._id}`}
+            render={props => <JobDetails {...activeJob} />}
+          />
+        </PopUpPanel>
+      </div>
+    </div>
+  );
 }
 
 export default DeveloperFeed;
