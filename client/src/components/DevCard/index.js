@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./style.css"
 
 function DevCard(props) {
   const [selectedDev, setSelectedDev] = useState("");
@@ -8,7 +9,7 @@ function DevCard(props) {
     <>
       <div className="card">
         <div className="card-header">
-          Developer Name: {props.data.firstName} {props.data.lastName}
+        Developer Name: {props.data.firstName} {props.data.lastName}
         </div>
         <div className="card-body">
           <p className="card-text">Developer Type: {props.data.devType}</p>

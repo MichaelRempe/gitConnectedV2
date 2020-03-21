@@ -17,6 +17,12 @@ import "./style.css";
 // API:
 import API from "../../utils/API";
 
+//Container:
+import Container from "../../components/Container/Container"
+
+//Navbar:
+import Navbar from "../../components/Navbar/Navbar"
+
 function DeveloperFeed(props) {
   const [jobList, setJobList] = useState([]);
   const [activeJob, setActiveJob] = useState([]);
@@ -42,16 +48,26 @@ function DeveloperFeed(props) {
   };
 
   return (
+    
     <div
       className="container-fluid DevBackgroundImage"
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="row">
+        <div className="col-12">
+          <Navbar />
+        </div>
+      </div>
+     
+
+      {/* <Container> */}
+      
+      <div className="row">        
         <LeftPanel>
           <HomeButton />
           <ProfileButton />
-        </LeftPanel>
-
+        </LeftPanel>       
+        
         <MainPanel>
           {jobList.map(job => (
             <JobCard
@@ -62,15 +78,16 @@ function DeveloperFeed(props) {
             />
           ))}
         </MainPanel>
-
-        <PopUpPanel>
-          <Route
-            exact
-            path={`${props.match.url}/${activeJob._id}`}
-            render={props => <JobDetails {...activeJob} />}
-          />
-        </PopUpPanel>
+                 
+          <PopUpPanel>
+            <Route
+              exact
+              path={`${props.match.url}/${activeJob._id}`}
+              render={props => <JobDetails {...activeJob} />}
+            />
+          </PopUpPanel>        
       </div>
+    {/* </Container> */}
     </div>
   );
 }
