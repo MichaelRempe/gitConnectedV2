@@ -8,8 +8,9 @@ function JobCard(props) {
   return (
     <>
       <div className="card">
-        <div className="card-header">Company Name</div>
+       
         <div className="card-body">
+        <h1 className="card-text">Company Name</h1>
           <h5 className="card-title">{props.data.title}</h5>
           <p className="card-text">{props.data.position}</p>
           <p className="card-text">{props.data.salary}</p>

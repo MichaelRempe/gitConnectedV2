@@ -4,10 +4,11 @@ import "./style.css";
 function Navbar(props) {
   return (
     <nav
-      className="navbar fixed-top navbar-light bg-light justify-content-between"
+      className="navbar fixed-top  justify-content-between"
+      style={{backgroundColor: "#464866"}}
      
     >
-      <a className="navbar-brand">Welcome {props.name}</a>
+      <a className="navbar-brand" ><h1>gitConnected</h1> {props.name}</a>
       <form className="form-inline">
         <input
           className="form-control mr-sm-2"
@@ -15,7 +16,7 @@ function Navbar(props) {
           placeholder="Search"
           aria-label="Search"
         />
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <button className="btn my-2 my-sm-0" type="submit">
           Search
         </button>
       </form>
