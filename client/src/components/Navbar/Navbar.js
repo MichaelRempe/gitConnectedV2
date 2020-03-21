@@ -1,10 +1,11 @@
 import React from "react";
+import "./style.css";
 
 function Navbar(props) {
   return (
     <nav
-      className="navbar navbar-light bg-light justify-content-between"
-      style={{ position: "sticky" }}
+      className="navbar fixed-top navbar-light bg-light justify-content-between"
+     
     >
       <a className="navbar-brand">Welcome {props.name}</a>
       <form className="form-inline">

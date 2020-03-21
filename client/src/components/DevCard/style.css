@@ -1,3 +1,24 @@
+.card {
+    font-family: 'Raleway', sans-serif;
+}
+
+.card-header {
+    font-size: 24px;
+    font-style: italic;
+}
+/* under header */
+.card-body{
+
+}
+/*text in body*/
+.card-text {
+
+}
+
+.home{
+    background-color: #474e59;
+}
+
 p{
     color:black
 }
