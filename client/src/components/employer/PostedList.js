@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../../data.js"
+import data from "../../data"
 
 class PostedList extends React.Component {
 
