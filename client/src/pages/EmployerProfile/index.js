@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import Image from "./image"
-import PostedTable from "./postedTable"
-import PostedList from "./postedList"
+import PostedTable from "../../components/employer/PostedTable"
+import PostedList from "../../components/employer/PostedList"
 import data from "../../data"
 
 
