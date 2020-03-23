@@ -14,7 +14,7 @@ import EmployerProfile from "./pages/EmployerProfile";
 import CreateDeveloper from "./pages/Forms/CreateDeveloper";
 import CreateEmployer from "./pages/Forms/CreateEmployer";
 import PostJob from "./pages/Forms/PostJob";
-
+// import PopUp from "./components/PopUpPanel"
 import firebase from "firebase/app";
 import {
   IfFirebaseAuthed,
@@ -44,6 +44,7 @@ function App() {
             <Route exact path="/dev-create-account" component={CreateDeveloper} />
             <Route exact path="/emp-create-account" component={CreateEmployer} />
             <Route exact path="/postjob" component={PostJob} />
+            {/* <Route path = "/details" component={PopUp}/> */}
           </Switch>
         </div>
       </Router>

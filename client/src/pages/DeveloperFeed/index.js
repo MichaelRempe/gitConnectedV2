@@ -19,10 +19,15 @@ import "./style.css";
 import API from "../../utils/API";
 
 //Container:
-import Container from "../../components/Container/Container"
+import Container from "../../components/Container/Container";
 
 //Navbar:
-import Navbar from "../../components/Navbar/Navbar"
+import Navbar from "../../components/Navbar/Navbar";
+
+//Slick
+// import "slick-carousel/slick/slick.css";
+// import "/slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 function DeveloperFeed(props) {
   const [jobList, setJobList] = useState([]);
@@ -48,18 +53,17 @@ function DeveloperFeed(props) {
     });
   };
 
+ 
   return (
     <>
-    
-    {/* <div className="container DevBackgroundImage" */}
-     {/* style={{ backgroundImage: `url(${background})` }}
-    > */}
+  
+     
       {/* <div className="row">
         <div className="col-12">
           <Navbar />
         </div>
       </div> */}
-     
+
       {/* <div className="nav">Header</div>
       <div className="main">
         <div className="left">Left</div>
@@ -67,9 +71,9 @@ function DeveloperFeed(props) {
         <div className="right">Right</div>
       </div>
       <div className="bottom">Footer</div> */}
-      
+
       {/* <Container> */}
-      
+
       {/* <div className="row">        
         <LeftPanel>
           <UserInfo />
@@ -96,15 +100,52 @@ function DeveloperFeed(props) {
             />
           </PopUpPanel>        
       </div> */}
-    {/* </Container> */}
-    {/*  </div> */}
-    <header><Navbar/></header>
-    <div id="main">
-        <article>Article</article>
-        <nav>Nav</nav>
-        <aside>Aside</aside>
-    </div>
-    <footer>Footer</footer>     
+      {/* </Container> */}
+      {/*  </div> */}
+      <div className="DevBackgroundImage"
+     style={{ backgroundImage: `url(${background})` }}
+    >
+
+    <Container>
+      <header><Navbar /></header>
+      <div id="main">
+        <nav>
+          <LeftPanel>
+            <UserInfo>
+              <HomeButton />
+              <ProfileButton />
+            </UserInfo>
+          </LeftPanel>
+        </nav>
+        <article>
+          <MainPanel>
+            
+            {jobList.map(job => (
+              <JobCard
+                setActive={populateActiveJob}
+                url={props.match.url}
+                data={job}
+                key={job._id}
+              />
+            ))}
+           
+          </MainPanel>
+        </article>
+
+        <aside>
+          <PopUpPanel>
+            <Route
+              exact
+              path={`${props.match.url}/${activeJob._id}`}
+              render={props => <JobDetails {...activeJob} />}
+            />
+          </PopUpPanel>
+        </aside>
+      </div>
+      <footer>Footer</footer>
+
+    </Container>
+      </div>
     </>
   );
 }
