@@ -5,10 +5,7 @@
 body{
     margin: 0;
 }
-/* .DevBackgroundImage{
-    background-size: 100vh;
-    background-position: center;
-} */
+
 
 
 /* div{
@@ -73,27 +70,28 @@ body{
 }
 
 body {
+    height: 100%;
     margin: 0;
 }
 
 #main {
     display: flex;
-    min-height: calc(100vh - 20vh);
+    flex: 1;
+    height: 100vh;
 }
 
 
 #main > article {
-    flex: 1;
+    flex: 0 1 40vw;
+    overflow-y: scroll;
 }
 
 #main > nav {
-    flex: 0 0 20vw;
-    background: beige;
+    flex: 0 1 20vw; 
 }
 
 #main > aside {
-    flex: 0 0 40vw;
-    background: beige;
+    flex: 1;
 }
 
 #main > nav {
@@ -107,4 +105,27 @@ header, footer, article, nav, aside {
 header, footer {
     background: yellowgreen;
     height: 10vh;
+}
+
+
+
+.DevBackgroundImage{
+    /* display: flex; */
+    background-size: 100vh;
+    
+    margin: 0
+}
+
+@media screen and (max-width: 878px) {
+    
+    
+    #main{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 878px) {    
+    #main > nav {
+        height: 20vh;
+    }   
 }

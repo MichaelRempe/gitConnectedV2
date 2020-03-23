@@ -14,9 +14,11 @@ import EmployerProfile from "./pages/EmployerProfile";
 import CreateDeveloper from "./pages/Forms/CreateDeveloper";
 import CreateEmployer from "./pages/Forms/CreateEmployer";
 import PostJob from "./pages/Forms/PostJob";
+
     // Errors
 import ErrorPage from "./pages/ErrorPage";
 import Unauth from "./pages/Unauth";
+
 
 import firebase from "firebase/app";
 import {
@@ -98,9 +100,9 @@ function App() {
             <Route exact path="/emp-create-account" component={CreateEmployer} />
             <Route exact path="/postjob" component={Unauth} />
             <Route component={ErrorPage}></Route>
-
             </Switch>
           </IfFirebaseUnAuthed>
+
       </Router>
       </FirebaseAuthProvider>
     </>

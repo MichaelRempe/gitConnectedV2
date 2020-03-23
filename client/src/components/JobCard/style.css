@@ -1,12 +1,23 @@
 
 .card {
-    width: 80%;
-    height: 250px;
+    display: flex;
+    padding: 5px;
+    /* width: 40vw; */
+    
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
     position: relative;
+    /* border: none; */
+    box-shadow: 1px;
+    border-radius: 0rem;
 }
 p{
     color: black;
+}
+
+.apply {
+    display: block;
+    position: absolute;
+    bottom: 5px;
 }
