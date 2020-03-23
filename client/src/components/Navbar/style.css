@@ -1,10 +1,15 @@
 /* .navbar{
     position: sticky;
 } */
-.fixed-top{
+/* .fixed-top{
     background-color: grey;
-}
+} */
 
+nav {
+    
+    height: 10vh;
+    display: flex;
+}
 h1 {
     font-family: 'Baloo Paaji 2', cursive;
     font-size: 30px;
@@ -16,7 +21,12 @@ h1 {
 .btn {
     background-color: #AAABB8;
     border-color: #AAABB8;
-    position: absolute;
+    /* position: absolute;
     bottom: 5px;
-    left: 5px;
+    left: 5px; */
 }
+
+/* form {
+    width: 10vw;
+} */
+

@@ -1,12 +1,110 @@
-.DevBackgroundImage{
-    background-size: 100%;
-    background-position: center;
-}
-div{
-    height: 100%;
+/* * {
+    box-sizing: border-box;
 }
 
-.cards{
+body{
+    margin: 0;
+}
+/* .DevBackgroundImage{
+    background-size: 100vh;
+    background-position: center;
+} */
+
+
+/* div{
+    height: 100%;
+} */
+
+/* .cards{
     height: 100%;
     overflow-y: scroll;
+} */ 
+/* 
+.main {
+    display: flex;
+    min-height: calc(100vh - 40vh);  
+    flex-direction: row; 
+}
+
+.middle {
+    flex: 1;
+    background-color: grey;
+}
+
+.right {
+    flex: 0 0 40vw;
+    background-color: blue;
+}
+
+
+
+.left {
+    flex: 0 0 20vh;
+    order: -1;
+} */
+
+/* .container {
+    background-color: grey;
+    height: 30vh;
+} */
+
+
+
+
+/* .footer{
+    background-color: grey;
+    height: 20vh;
+} */
+
+/* .container {
+    height: 100vh;
+} */
+/* .nav, .left, .middle, .right, .footer {
+    padding: 1em;
+}
+
+.nav, .bottom {    
+    background-color: blue;
+    height: 20vh
+}  */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#main {
+    display: flex;
+    min-height: calc(100vh - 20vh);
+}
+
+
+#main > article {
+    flex: 1;
+}
+
+#main > nav {
+    flex: 0 0 20vw;
+    background: beige;
+}
+
+#main > aside {
+    flex: 0 0 40vw;
+    background: beige;
+}
+
+#main > nav {
+    order: -1;
+}
+
+header, footer, article, nav, aside {
+    padding: 1em;
+}
+
+header, footer {
+    background: yellowgreen;
+    height: 10vh;
 }
