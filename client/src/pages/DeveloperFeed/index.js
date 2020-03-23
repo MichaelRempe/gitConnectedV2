@@ -19,7 +19,7 @@ import "./style.css";
 import API from "../../utils/API";
 
 //Container:
-import Container from "../../components/Container/Container";
+import Container from "../../components/Container";
 
 //Navbar:
 import Navbar from "../../components/NavBar";

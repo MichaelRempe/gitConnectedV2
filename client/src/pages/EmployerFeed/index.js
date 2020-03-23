@@ -14,6 +14,10 @@ import DeveloperDetails from "../../components/DevDetails";
 
 import NavBar from "../../components/NavBar";
 
+import Footer from "../../components/Footer"
+
+import Container from "../../components/Container";
+
 //Style:
 import background from "../../assets/developerFeed-bg.png";
 import "./style.css";
@@ -47,6 +51,7 @@ function EmployerFeed(props) {
 
   return (
     <>
+    <Container>
     <header>
     <NavBar />
     </header>
@@ -81,7 +86,10 @@ function EmployerFeed(props) {
         </PopUpPanel>
       </div>
     </div>
+    {/* <footer><Footer /></footer> */}
+    </Container>
     </>
+    
   );
 }
 

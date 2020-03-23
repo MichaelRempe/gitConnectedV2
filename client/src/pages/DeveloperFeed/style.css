@@ -83,7 +83,7 @@ body {
 
 #main > article {
     flex: 0 1 40vw;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 #main > nav {
