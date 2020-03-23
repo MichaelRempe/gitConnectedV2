@@ -16,11 +16,12 @@ function EmpCreateAccount() {
     companyName: "",
     email: "",
     phone: "",
-    location: "",
+    location: "West-Coast",
     about: ""
   });
 
   function handleInputChange(event) {
+    console.log(formObject);
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
   }
@@ -43,6 +44,7 @@ function EmpCreateAccount() {
     if (validateEmail(formObject.email) === false) {
       return;
     }
+    console.log(formObject)
     API.createEmployer(formObject)
       .then(data => console.log(data))
       .catch(err => console.log(err));
