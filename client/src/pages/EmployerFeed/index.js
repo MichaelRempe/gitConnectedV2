@@ -8,6 +8,7 @@ import HomeButton from "../../components/ButtonHome";
 import ProfileButton from "../../components/ButtonProfile";
 import PostJobButton from "../../components/ButtonCreateJob";
 
+import UserInfo from "../../components/UserInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
@@ -45,6 +46,7 @@ function EmployerFeed(props) {
     <div className="container-fluid">
       <div className="row">
         <LeftPanel>
+          <UserInfo />
           <HomeButton />
           <ProfileButton />
           <PostJobButton />
