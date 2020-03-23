@@ -2,3 +2,16 @@
     background-size: 100% 100%;
     background-position: center;
 }
+
+/* .container-fluid{
+    height: 100vh;
+} */
+.container-fluid{
+    display: flex !important;    
+    min-height: calc(100vh - 10vh) !important;
+    padding: 1em;
+   
+}
+
+/* position: relative; */
+

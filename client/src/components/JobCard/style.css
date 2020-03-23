@@ -6,12 +6,12 @@
     
     margin: auto;
     margin-bottom: 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     position: relative;
     /* border: none; */
-    box-shadow: 1px;
     border-radius: 0rem;
 }
+
 p{
     color: black;
 }

@@ -129,3 +129,9 @@ header, footer {
         height: 20vh;
     }   
 }
+
+@media screen and (max-width: 878) {
+    #main > footer {
+        display: none;
+    }
+}
