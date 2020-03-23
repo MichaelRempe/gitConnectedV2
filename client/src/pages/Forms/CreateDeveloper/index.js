@@ -73,6 +73,7 @@ function DevCreateAccount() {
     // }
 
   function handleInputChange(event) {
+    console.log(formObject);
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
   }
@@ -91,6 +92,7 @@ function DevCreateAccount() {
   }
 
   function handleFormSubmit(event) {
+    console.log("hit");
     event.preventDefault();
     if (
       !formObject.firstName &&

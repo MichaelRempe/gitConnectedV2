@@ -14,7 +14,12 @@ import EmployerProfile from "./pages/EmployerProfile";
 import CreateDeveloper from "./pages/Forms/CreateDeveloper";
 import CreateEmployer from "./pages/Forms/CreateEmployer";
 import PostJob from "./pages/Forms/PostJob";
-// import PopUp from "./components/PopUpPanel"
+
+    // Errors
+import ErrorPage from "./pages/ErrorPage";
+import Unauth from "./pages/Unauth";
+
+
 import firebase from "firebase/app";
 import {
   IfFirebaseAuthed,
@@ -30,23 +35,74 @@ function App() {
     <>
     <FirebaseAuthProvider {...config} firebase={firebase}>
       <Router >
-        <div>
+        
+          <IfFirebaseAuthed>
+          {user => {
+              return (
+                <>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path='/selectform' component={SelectForm} />
             {/* Developer Paths */}
-            <Route path="/feed/dev/" component ={DeveloperFeed} />
-            <Route path="/profile/dev" component={DeveloperProfile} />
+            <Route path="/feed/dev/" 
+              render={props => (
+                <DeveloperFeed
+                  {...props}
+
+                  userID={user.user.uid}
+              /> )} 
+            />
+            <Route path="/profile/dev" render={props => (
+                <DeveloperProfile
+                  {...props}
+
+                  userID={user.user.uid}
+              /> )}  />
             {/* Employer Paths */}
-            <Route path="/feed/emp" component ={EmployerFeed} />
-            <Route path="/profile/emp" component={EmployerProfile} />
+            <Route path="/feed/emp" render={props => (
+                <EmployerFeed
+                  {...props}
+
+                  userID={user.user.uid}
+              /> )}  />
+            <Route path="/profile/emp" render={props => (
+                <EmployerProfile
+                  {...props}
+
+                  userID={user.user.uid}
+              /> )} />
+            <Route exact path="/postjob" render={props => (
+                <PostJob
+                  {...props}
+
+                  userID={user.user.uid}
+              /> )} />
+            <Route component={ErrorPage}></Route>
+          </Switch>
+          </>
+              );
+            }}
+       
+        </IfFirebaseAuthed>
+        <IfFirebaseUnAuthed>
+            {/* CAN WE JUST REPLACE THIS WITH ONE CATCHALL ROUTE? */}
+            <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path='/selectform' component={SelectForm} />
+            {/* Developer Paths */}
+            <Route path="/feed/dev/" component ={Unauth} />
+            <Route path="/profile/dev" component={Unauth} />
+            {/* Employer Paths */}
+            <Route path="/feed/emp" component ={Unauth} />
+            <Route path="/profile/emp" component={Unauth} />
             {/* Forms */}
             <Route exact path="/dev-create-account" component={CreateDeveloper} />
             <Route exact path="/emp-create-account" component={CreateEmployer} />
-            <Route exact path="/postjob" component={PostJob} />
-            {/* <Route path = "/details" component={PopUp}/> */}
-          </Switch>
-        </div>
+            <Route exact path="/postjob" component={Unauth} />
+            <Route component={ErrorPage}></Route>
+            </Switch>
+          </IfFirebaseUnAuthed>
+
       </Router>
       </FirebaseAuthProvider>
     </>

@@ -1,11 +1,11 @@
-.EmpProfileImage {
+.Image {
   height: 700px;
   background-size: cover;
   background-position: center;
   position: relative;
 }
 
-.EmpProfileImage::after {
+.Image::after {
   content: "";
   display: block;
   opacity: .4;
@@ -17,16 +17,16 @@
   background: black;
 }
 
-.EmpProfileImage * {
+.Image * {
   position: relative;
   z-index: 2;
 }
 
-.EmpProfileImage h1 {
+.Image h1 {
   color: white;
 }
 
-.EmpProfileImage h1 {
+.Image h1 {
   font-size: 60px;
   padding-top: 60px;
   margin-top: 0;
