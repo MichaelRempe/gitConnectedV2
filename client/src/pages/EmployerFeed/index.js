@@ -22,6 +22,7 @@ import API from "../../utils/API";
 function EmployerFeed(props) {
   const [devList, setDevList] = useState([]);
   const [activeDev, setActiveDev] = useState({});
+  console.log(props.userID)
 
   //On page load, pull DEVELOPERS from API
   useEffect(() => {
