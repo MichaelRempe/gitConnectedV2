@@ -59,7 +59,14 @@ function App() {
             {/* <Route exact path="/login" component={Home} /> */}
             <Route exact path='/selectform' component={Unauth} />
             {/* Developer Paths */}
-            <Route path="/feed/dev/" component ={Unauth} />
+            <Route path="/feed/dev/" component ={Unauth} 
+              render={props => (
+                <DeveloperFeed
+                  {...props}
+
+                  userID={user.user.uid}
+              /> )} 
+            />
             <Route path="/profile/dev" component={Unauth} />
             {/* Employer Paths */}
             <Route path="/feed/emp" component ={Unauth} />
