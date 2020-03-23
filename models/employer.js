@@ -31,7 +31,7 @@ const employerSchema = new Schema({
   location: {
     type: String,
     trim: true,
-    required: true,
+    // required: true,
     // enum: ["West-Coast", "East-Coast", "Mid-West"]
   },
   about:{
