@@ -15,6 +15,7 @@ const columns = [
 ]
 
 function EmployerProfile(props) {
+  console.log(props.userID)
   return (
     <>
       <Image backgroundImage={background}>

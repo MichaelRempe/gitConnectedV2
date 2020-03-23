@@ -15,6 +15,7 @@ const columns = [
 ]
 
 function DeveloperProfile(props) {
+  console.log(props.userID)
   return (
     <>
       <Image backgroundImage={background}>
