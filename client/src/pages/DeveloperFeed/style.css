@@ -83,7 +83,7 @@ body {
 
 #main > article {
     flex: 0 1 40vw;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 #main > nav {
@@ -128,4 +128,10 @@ header, footer {
     #main > nav {
         height: 20vh;
     }   
+}
+
+@media screen and (max-width: 878) {
+    #main > footer {
+        display: none;
+    }
 }

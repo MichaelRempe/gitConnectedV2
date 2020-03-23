@@ -2,7 +2,7 @@ import React from "react";
 
 function DevDetails(props) {
     return (
-        <div className="card" style={{ margin: "5px", position: "relative" }}>
+        <div className="card">
             <div className="card-headers" style={{ textAlign: "center" }}>
                 <h3>Developer Name</h3>
             </div>

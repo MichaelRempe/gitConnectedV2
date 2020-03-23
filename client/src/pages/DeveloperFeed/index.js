@@ -19,10 +19,10 @@ import "./style.css";
 import API from "../../utils/API";
 
 //Container:
-import Container from "../../components/Container/Container";
+import Container from "../../components/Container";
 
 //Navbar:
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/NavBar";
 
 //Slick
 // import "slick-carousel/slick/slick.css";
@@ -144,8 +144,6 @@ function DeveloperFeed(props) {
           </PopUpPanel>
         </aside>
       </div>
-      <footer>Footer</footer>
-
     </Container>
       </div>
     </>
