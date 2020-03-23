@@ -11,7 +11,6 @@ import * as firebase from "firebase/app";
 // Add the Firebase services that you want to use
 import "firebase/auth";
 
-
 function DevCreateAccount() {
   const [formObject, setFormObject] = useState({
     firstName: "",
@@ -21,56 +20,55 @@ function DevCreateAccount() {
     empType: "Full-Time",
     language: "JavaScript",
     location: "",
-    profile: ""
+    profile: "",
+    uuid: ""
   });
 
   /**
-     * Handles the sign up button press.
-     */
-    function handleSignUp() {
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-      if (email.length < 4) {
-        alert('Please enter an email address.');
-        return;
-      }
-      if (password.length < 6) {
-        alert('Please enter a password.');
-        return;
-      }
-      // Create user with email and pass.
-      // [START createwithemail]
-      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+   * Handles the sign up button press.
+   */
+  function handleSignUp(event) {
+    event.preventDefault();
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if (email.length < 4) {
+      alert("Please enter an email address.");
+      return;
+    }
+    if (password.length < 6) {
+      alert("Please enter a password.");
+      return;
+    }
+    // Create user with email and pass.
+    // [START createwithemail]
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         // [START_EXCLUDE]
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
+        if (errorCode == "auth/weak-password") {
+          alert("The password is too weak.");
         } else {
           alert(errorMessage);
         }
         console.log(error);
         // [END_EXCLUDE]
-      }).then(() => {
-        firebase.auth().currentUser.sendEmailVerification()
+      })
+      .then(() => {
+        let newDeveloper = formObject;
+        firebase.auth().currentUser.sendEmailVerification();
+        let id = firebase.auth().currentUser.uid.toString();
+        newDeveloper.uuid = id;
+        console.log(newDeveloper.id);
+        setFormObject(newDeveloper);
+        console.log(formObject);
+        handleFormSubmit();
       });
-      // [END createwithemail]
-    }
-
-    // /**
-    //  * Sends an email verification to the user.
-    //  */
-    // function sendEmailVerification() {
-    //   // [START sendemailverification]
-    //   firebase.auth().currentUser.sendEmailVerification().then(function() {
-    //     // Email Verification sent!
-    //     // [START_EXCLUDE]
-    //     // alert('Email Verification Sent!');
-    //     // [END_EXCLUDE]
-    //   });
-    //   // [END sendemailverification]
-    // }
+    // [END createwithemail]
+  }
 
   function handleInputChange(event) {
     console.log(formObject);
@@ -91,9 +89,7 @@ function DevCreateAccount() {
     }
   }
 
-  function handleFormSubmit(event) {
-    console.log("hit");
-    event.preventDefault();
+  function handleFormSubmit() {
     if (
       !formObject.firstName &&
       !formObject.lastName &&
@@ -105,160 +101,165 @@ function DevCreateAccount() {
     if (validateEmail(formObject.emailAddress) === false) {
       return;
     }
-    console.log("everything valid");
+    console.log(formObject);
     API.createDev(formObject)
       .then(data => console.log(data))
       .catch(err => console.log(err));
   }
 
   return (
-    <div className="DevCreateImage text-center" style={{ backgroundImage: `url(${background})` }}>
-        <h1 className="display-4">Hello Fellow Developer!</h1>
-        <h2 className="lead">
-          Let's get started. Fill out the following to create an account.
-        </h2>
-        <form>
-          <div className="accountForm">
-            <div className="form-group">
-              <input 
-                onChange={handleInputChange}
-                name="firstName"
-                type="text"
-                className="form-control"
-                placeholder="First Name (Required)"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                onChange={handleInputChange}
-                name="lastName"
-                type="text"
-                className="form-control"
-                placeholder="Last Name (Required)"
-              />
-            </div>
-            <div className="form-group">
-              <label>Email address</label>
-              <input
-                onChange={handleInputChange}
-                name="emailAddress"
-                id="email"
-                type="email"
-                className="form-control"
-                placeholder="name@example.com (Required)"
-              />
-            </div>
-            <div className="form-group">
-              <label>Password</label>
-              <input
-                onChange={handleInputChange}
-                name="password"
-                id="password"
-                type="password"
-                className="form-control"
-                placeholder="Must be at least 6 characters long"
-              />
-            </div>
-            <div className="form-group">
-              <label>Type of Developer</label>
-              <select
-                className="form-control"
-                name="devType"
-                value={formObject.devType}
-                onChange={handleDropDownChange}
-              >
-                <option name="devType" value="fullStack">
-                  Full-Stack
-                </option>
-                <option name="devType" value="frontEnd">
-                  Front End
-                </option>
-                <option name="devType" value="backEnd">
-                  Back End
-                </option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Type of Employment</label>
-              <select
-                className="form-control"
-                name="empType"
-                value={formObject.empType}
-                onChange={handleDropDownChange}
-              >
-                <option name="empType" value="fullTime">
-                  Full-Time
-                </option>
-                <option name="empType" value="partTime">
-                  Part-Time
-                </option>
-                <option name="empType" value="contract">
-                  Contract
-                </option>
-                <option name="empType" value="volunteer">
-                  Volunteer
-                </option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Select your primary language</label>
-              <select
-                className="form-control"
-                name="language"
-                value={formObject.language}
-                onChange={handleDropDownChange}
-              >
-                <option name="language" value="JavaScript">
-                  JavaScript
-                </option>
-                <option name="language" value="Java">
-                  Java
-                </option>
-                <option name="language" value="C">
-                  C
-                </option>
-                <option name="language" value="C++">
-                  C++
-                </option>
-                <option name="language" value="PHP">
-                  PHP
-                </option>
-                <option name="language" value="Python">
-                  Python
-                </option>
-                <option name="language" value="Ruby">
-                  Ruby
-                </option>
-                <option name="language" value="Other">
-                  Other
-                </option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Tell us a little bit about yourself</label>
-              <textarea
-                onChange={handleInputChange}
-                name="profile"
-                className="form-control"
-                rows="3"
-              ></textarea>
-            </div>
-            <button
+    <div
+      className="DevCreateImage text-center"
+      style={{ backgroundImage: `url(${background})` }}
+    >
+      <h1 className="display-4">Hello Fellow Developer!</h1>
+      <h2 className="lead">
+        Let's get started. Fill out the following to create an account.
+      </h2>
+      <form>
+        <div className="accountForm">
+          <div className="form-group">
+            <input
+              onChange={handleInputChange}
+              name="firstName"
+              type="text"
+              className="form-control"
+              placeholder="First Name (Required)"
+            />
+          </div>
+          <div className="form-group">
+            <input
+              onChange={handleInputChange}
+              name="lastName"
+              type="text"
+              className="form-control"
+              placeholder="Last Name (Required)"
+            />
+          </div>
+          <div className="form-group">
+            <label>Email address</label>
+            <input
+              onChange={handleInputChange}
+              name="emailAddress"
+              id="email"
+              type="email"
+              className="form-control"
+              placeholder="name@example.com (Required)"
+            />
+          </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              onChange={handleInputChange}
+              name="password"
+              id="password"
+              type="password"
+              className="form-control"
+              placeholder="Must be at least 6 characters long"
+            />
+          </div>
+          <div className="form-group">
+            <label>Type of Developer</label>
+            <select
+              className="form-control"
+              name="devType"
+              value={formObject.devType}
+              onChange={handleDropDownChange}
+            >
+              <option name="devType" value="fullStack">
+                Full-Stack
+              </option>
+              <option name="devType" value="frontEnd">
+                Front End
+              </option>
+              <option name="devType" value="backEnd">
+                Back End
+              </option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label>Type of Employment</label>
+            <select
+              className="form-control"
+              name="empType"
+              value={formObject.empType}
+              onChange={handleDropDownChange}
+            >
+              <option name="empType" value="fullTime">
+                Full-Time
+              </option>
+              <option name="empType" value="partTime">
+                Part-Time
+              </option>
+              <option name="empType" value="contract">
+                Contract
+              </option>
+              <option name="empType" value="volunteer">
+                Volunteer
+              </option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label>Select your primary language</label>
+            <select
+              className="form-control"
+              name="language"
+              value={formObject.language}
+              onChange={handleDropDownChange}
+            >
+              <option name="language" value="JavaScript">
+                JavaScript
+              </option>
+              <option name="language" value="Java">
+                Java
+              </option>
+              <option name="language" value="C">
+                C
+              </option>
+              <option name="language" value="C++">
+                C++
+              </option>
+              <option name="language" value="PHP">
+                PHP
+              </option>
+              <option name="language" value="Python">
+                Python
+              </option>
+              <option name="language" value="Ruby">
+                Ruby
+              </option>
+              <option name="language" value="Other">
+                Other
+              </option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label>Tell us a little bit about yourself</label>
+            <textarea
               onChange={handleInputChange}
               name="profile"
-              type="button"
-              className="btn btn-success"
-              disabled={
-                !(
-                  formObject.firstName &&
-                  formObject.lastName &&
-                  formObject.emailAddress
-                )
-              }
-              onClick={handleFormSubmit, handleSignUp}>Submit
-            </button>
+              className="form-control"
+              rows="3"
+            ></textarea>
           </div>
-        </form>
+          <button
+            onChange={handleInputChange}
+            name="profile"
+            type="button"
+            className="btn btn-success"
+            disabled={
+              !(
+                formObject.firstName &&
+                formObject.lastName &&
+                formObject.emailAddress
+              )
+            }
+            onClick={handleSignUp}
+          >
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

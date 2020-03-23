@@ -4,6 +4,10 @@ const Schema = mongoose.Schema;
 const positionSchema = require("./job");
 
 const developerSchema = new Schema({
+  uuid:{
+    type: String,
+    required: true
+  },
   userName: {
     type: String,
     trim: true,
