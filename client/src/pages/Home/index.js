@@ -119,9 +119,9 @@ function Home() {
         document.getElementById(
           "quickstart-account-details"
         ).textContent = JSON.stringify(user, null, "  ");
-        if (!emailVerified) {
-          document.getElementById("quickstart-verify-email").disabled = false;
-        }
+        // if (!emailVerified) {
+        //   document.getElementById("quickstart-verify-email").disabled = false;
+        // }
         // [END_EXCLUDE]
       } else {
         // User is signed out.

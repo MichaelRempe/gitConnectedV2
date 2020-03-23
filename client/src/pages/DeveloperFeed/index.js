@@ -28,6 +28,8 @@ function DeveloperFeed(props) {
   const [jobList, setJobList] = useState([]);
   const [activeJob, setActiveJob] = useState([]);
 
+  console.log(props.userID)
+
   //On page load, pull in jobs from API
   useEffect(() => {
     loadJobs();
