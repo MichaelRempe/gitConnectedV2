@@ -29,4 +29,4 @@ auth_config.json
 .env.test
 
 # firebase
-client\src\firebase-config.js
+client/src/firebase-config.js
