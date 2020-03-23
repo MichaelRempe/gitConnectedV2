@@ -49,21 +49,28 @@ function DeveloperFeed(props) {
   };
 
   return (
+    <>
     
-    <div
-      className="container-fluid DevBackgroundImage"
-      style={{ backgroundImage: `url(${background})` }}
-    >
-      <div className="row">
+    {/* <div className="container DevBackgroundImage" */}
+     {/* style={{ backgroundImage: `url(${background})` }}
+    > */}
+      {/* <div className="row">
         <div className="col-12">
           <Navbar />
         </div>
-      </div>
+      </div> */}
      
-
+      {/* <div className="nav">Header</div>
+      <div className="main">
+        <div className="left">Left</div>
+        <div className="middle">Middle</div>
+        <div className="right">Right</div>
+      </div>
+      <div className="bottom">Footer</div> */}
+      
       {/* <Container> */}
       
-      <div className="row">        
+      {/* <div className="row">        
         <LeftPanel>
           <UserInfo />
           <HomeButton />
@@ -88,9 +95,17 @@ function DeveloperFeed(props) {
               render={props => <JobDetails {...activeJob} />}
             />
           </PopUpPanel>        
-      </div>
+      </div> */}
     {/* </Container> */}
+    {/*  </div> */}
+    <header><Navbar/></header>
+    <div id="main">
+        <article>Article</article>
+        <nav>Nav</nav>
+        <aside>Aside</aside>
     </div>
+    <footer>Footer</footer>     
+    </>
   );
 }
 

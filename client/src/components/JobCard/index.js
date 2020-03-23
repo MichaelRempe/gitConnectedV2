@@ -6,6 +6,19 @@ import "./style.css";
 function JobCard(props) {
   console.log(props);
   return (
+// <<<<<<< HEAD
+//     <>
+//       <div className="card">
+       
+//         <div className="card-body">
+//         <h1 className="card-text">Company Name</h1>
+//           <h5 className="card-title">{props.data.title}</h5>
+//           <p className="card-text">{props.data.position}</p>
+//           <p className="card-text">{props.data.salary}</p>
+//           <p className="card-text">{props.data.empType}</p>
+//           <Link to={`${props.url}/${props.data._id }`} key={props.data._id} className="btn btn-primary" onClick={(e)=> props.setActive(props.data._id)}>Apply!</Link>
+//         </div>
+// =======
     <div className="card">
       <div className="card-header">Position: {props.data.title}</div>
       <div className="card-body">
@@ -21,6 +34,7 @@ function JobCard(props) {
         >
           Apply!
         </Link>
+>>>>>>> 13289167c87ff88da09d0b5c2e28535ad055dd80
       </div>
     </div>
   );
