@@ -13,12 +13,58 @@ import "firebase/auth";
 
 function EmpCreateAccount() {
   const [formObject, setFormObject] = useState({
+    _id: "",
     companyName: "",
     email: "",
     phone: "",
     location: "West-Coast",
     about: ""
   });
+
+  /**
+   * Handles the sign up button press.
+   */
+  function handleSignUp(event) {
+    event.preventDefault();
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if (email.length < 4) {
+      alert("Please enter an email address.");
+      return;
+    }
+    if (password.length < 6) {
+      alert("Please enter a password.");
+      return;
+    }
+    // Create user with email and pass.
+    // [START createwithemail]
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == "auth/weak-password") {
+          alert("The password is too weak.");
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      })
+      .then(() => {
+        let newEmployer = formObject;
+        firebase.auth().currentUser.sendEmailVerification();
+        let id = firebase.auth().currentUser.uid.toString();
+        newEmployer._id = id;
+        setFormObject(newEmployer);
+        console.log(formObject);
+        handleFormSubmit();
+      });
+    // [END createwithemail]
+  }
 
   function handleInputChange(event) {
     console.log(formObject);
@@ -35,8 +81,7 @@ function EmpCreateAccount() {
     }
   }
 
-  function handleFormSubmit(event) {
-    event.preventDefault();
+  function handleFormSubmit() {
     if (!formObject.companyName && !formObject.email) {
       alert("Required fields must be filled out!");
       return;
@@ -74,12 +119,24 @@ function EmpCreateAccount() {
             <div className="form-group">
               <input
                 onChange={handleInputChange}
-                type="text"
+                type="email"
+                id="email"
                 className="form-control"
                 name="email"
                 placeholder="example@email.com (Required)"
               />
             </div>
+            <div className="form-group">
+            <label>Password</label>
+            <input
+              onChange={handleInputChange}
+              name="password"
+              id="password"
+              type="password"
+              className="form-control"
+              placeholder="Must be at least 6 characters long"
+            />
+          </div>
             <div className="form-group">
               <input
                 onChange={handleInputChange}
@@ -125,7 +182,7 @@ function EmpCreateAccount() {
           type="button"
           className="btn btn-success"
           disabled={!(formObject.companyName && formObject.email)}
-          onClick={handleFormSubmit}
+          onClick={handleSignUp}
         >
           Submit
         </button>
