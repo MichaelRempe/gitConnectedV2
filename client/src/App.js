@@ -30,6 +30,7 @@ import "firebase/auth";
 import config from "./firebase-config";
 
 function App() {
+  let loggedIn;
 
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
       <Router >
         
           <IfFirebaseAuthed>
+            {loggedIn=true}
           {user => {
               return (
                 <>

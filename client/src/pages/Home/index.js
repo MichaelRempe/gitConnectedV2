@@ -16,6 +16,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 
 function Home() {
+  
 
   const devID = "5e69316dc528fd5c40dbace2";
   const empID = "5e69316dc528fd5c40dbace1";
@@ -82,6 +83,7 @@ function Home() {
           console.log(error);
           if (!error) {
             console.log("success");
+
           }
           document.getElementById("quickstart-sign-in").disabled = false;
           // [END_EXCLUDE]
@@ -113,12 +115,10 @@ function Home() {
         var uid = user.uid;
         var providerData = user.providerData;
         // [START_EXCLUDE]
-        document.getElementById("quickstart-sign-in-status").textContent =
-          "Signed in";
+        document.getElementById("email").style.display = "none";
+        document.getElementById("password").style.display = "none";
         document.getElementById("quickstart-sign-in").textContent = "Sign out";
-        document.getElementById(
-          "quickstart-account-details"
-        ).textContent = JSON.stringify(user, null, "  ");
+       
         // if (!emailVerified) {
         //   document.getElementById("quickstart-verify-email").disabled = false;
         // }
@@ -126,11 +126,9 @@ function Home() {
       } else {
         // User is signed out.
         // [START_EXCLUDE]
-        document.getElementById("quickstart-sign-in-status").textContent =
-          "Signed out";
+       
         document.getElementById("quickstart-sign-in").textContent = "Sign in";
-        document.getElementById("quickstart-account-details").textContent =
-          "null";
+        
         // [END_EXCLUDE]
       }
       // [START_EXCLUDE silent]
@@ -189,17 +187,6 @@ function Home() {
                 </Button>
               </Link>
             </div>
-          </div>
-
-          <div className="quickstart-user-details-container">
-            Firebase sign-in status:{" "}
-            <span id="quickstart-sign-in-status">Unknown</span>
-            <div>
-              Firebase auth <code>currentUser</code> object value:
-            </div>
-            <pre>
-              <code id="quickstart-account-details">null</code>
-            </pre>
           </div>
         </div>
       </ div>
