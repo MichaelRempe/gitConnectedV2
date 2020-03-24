@@ -22,7 +22,7 @@ import API from "../../utils/API";
 import Container from "../../components/Container";
 
 //Navbar:
-import NavBar from "../../components/Navbar";
+import NavBar from "../../components/NavBar";
 
 //Slick
 // import "slick-carousel/slick/slick.css";
@@ -33,9 +33,10 @@ function DeveloperFeed(props) {
   const [jobList, setJobList] = useState([]);
   const [activeJob, setActiveJob] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
-
+  console.log(currentUser)
   console.log(props.userID);
 
+ 
   //On page load, pull in jobs from API
   useEffect(() => {
     loadJobs();
@@ -50,9 +51,10 @@ function DeveloperFeed(props) {
   }
   function loadUser() {
     console.log("hit");
-    API.getDev(props.userID)
-      .then(data => setCurrentUser(data.data))
+    API.getDev(props.userID)   
+      .then(data => setCurrentUser(data.data))      
       .catch(err => console.log(err));
+       
   }
   // Set Active Job in popUP panel
   const populateActiveJob = id => {

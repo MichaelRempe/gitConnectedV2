@@ -2,13 +2,6 @@ import React from "react";
 import { Link, Route } from "react-router-dom";
 import "./style.css";
 // import nextId from "react-id-generator";
-import Slider from "react-slick";
-let settings = {
-  infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 10,
-  arrows: true
-}
 
 function JobCard(props) {
   console.log(props);
@@ -27,7 +20,6 @@ function JobCard(props) {
 //         </div>
 // =======
 
-<Slider {...settings}>
     <div className="card job">
       <div className="card-header">Position: {props.data.title}</div>
       <div className="card-body">
@@ -46,7 +38,6 @@ function JobCard(props) {
         </Link>
       </div>
     </div>
-    </Slider>
   );
 }
 
