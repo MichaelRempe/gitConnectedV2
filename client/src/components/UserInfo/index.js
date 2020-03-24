@@ -4,7 +4,7 @@ import React from "react";
 import "./style.css";
 
 const UserInfo = props => {
-  console.log(props.user);
+  console.log(props.userId);
   return (
     <div className="card">
       <div className="card-title">{`${props.user.firstName} ${props.user.lastName}`}</div>

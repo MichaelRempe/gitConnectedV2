@@ -76,34 +76,34 @@ body {
 
 #main {
     display: flex;
-    flex: 1;
-    height: 100vh;
+    /* flex: 1; */
+    height: 100vh; 
+    padding-top: 10vh;
 }
 
 
-#main > article {
+/* #main > article {
     flex: 0 1 40vw;
     /* overflow-y: scroll; */
-}
+/* } */
 
-#main > nav {
+/* #main > nav {
     flex: 0 1 20vw; 
 }
 
 #main > aside {
     flex: 1;
-}
+} */
 
-#main > nav {
+/* #main > nav {
     order: -1;
-}
+} */
 
-header, footer, article, nav, aside {
+/* header, footer, article, nav, aside {
     padding: 1em;
-}
+} */
 
-header, footer {
-    background: yellowgreen;
+header {    
     height: 10vh;
 }
 
