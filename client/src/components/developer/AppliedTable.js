@@ -5,7 +5,7 @@ function AppliedTable(props){
   console.log(props.user)
   return (
     <>
-      <table className="table">
+      {/* <table className="table">
         <thead>
           <tr>
             { props.columns.map(column => (
@@ -24,7 +24,7 @@ function AppliedTable(props){
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </>
   )
 }
