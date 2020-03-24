@@ -39,7 +39,6 @@ function DeveloperProfile(props) {
               <div class="card mb-4">
                 <div class="card-body">
                   <h2 class="card-title">About Me</h2>
-                  <img src="" />
                   <p class="card-text">First Name: {currentUser.firstName}</p>
                   <p class="card-text">Last Name: {currentUser.lastName}</p>
                   <p class="card-text">Email: {currentUser.emailAddress}</p>
@@ -47,7 +46,7 @@ function DeveloperProfile(props) {
                   <p class="card-text">Type of Employment: {currentUser.empType}</p>
                   <p class="card-text">Primary Languages: {currentUser.language}</p>
                   <p class="card-text">Summary: {currentUser.profile}</p>
-                  <p class="card-text">Summary: {currentUser.appliedTo}</p>
+                  <p class="card-text">Jobs Applied to: {currentUser.appliedTo}</p>
                 </div>
               </div>
             </div>
