@@ -4,52 +4,45 @@ const Schema = mongoose.Schema;
 const positionSchema = require("./job");
 
 const developerSchema = new Schema({
-  uuid:{
+  _id: {
     type: String,
-    required: true
-  },
-  userName: {
-    type: String,
-    trim: true,
-  },
-  password: {
-    type: String,
-    trim:true
+    required: true,
+    unique: true
   },
   firstName: {
     type: String,
     trim: true,
     required: true
   },
-  lastName:{
+  lastName: {
     type: String,
     trim: true,
     required: true
   },
-  emailAddress:{
+  emailAddress: {
     type: String,
     trim: true,
     require: true
   },
-  devType:{
+  devType: {
     type: String,
     trim: true,
     default: "fullStack"
   },
-  empType:{
+  empType: {
     type: String,
     trim: true,
     default: "fullTime"
   },
-  language:{
-    type: String,
+  language: {
+    type: String
   },
   location: {
     type: String,
-    trim: true,
+    trim: true
     // enum: ["West-Coast", "East-Coast", "Mid-West"]
   },
-  profile:{
+  profile: {
     type: String,
     default: "Passionate developer seeking employment!"
   },

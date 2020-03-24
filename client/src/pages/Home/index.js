@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import { Link, Route } from "react-router-dom";
 
-
 //Style
 import background from "../../assets/home-bg.jpeg";
 import "./style.css";
@@ -16,11 +15,9 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 
 function Home() {
-  
-
   const devID = "5e69316dc528fd5c40dbace2";
   const empID = "5e69316dc528fd5c40dbace1";
-  
+
   const [admin, setAdmin] = useState({
     id: "Mongoose id"
   });
@@ -83,7 +80,6 @@ function Home() {
           console.log(error);
           if (!error) {
             console.log("success");
-
           }
           document.getElementById("quickstart-sign-in").disabled = false;
           // [END_EXCLUDE]
@@ -118,7 +114,7 @@ function Home() {
         document.getElementById("email").style.display = "none";
         document.getElementById("password").style.display = "none";
         document.getElementById("quickstart-sign-in").textContent = "Sign out";
-       
+
         // if (!emailVerified) {
         //   document.getElementById("quickstart-verify-email").disabled = false;
         // }
@@ -126,9 +122,9 @@ function Home() {
       } else {
         // User is signed out.
         // [START_EXCLUDE]
-       
+
         document.getElementById("quickstart-sign-in").textContent = "Sign in";
-        
+
         // [END_EXCLUDE]
       }
       // [START_EXCLUDE silent]
@@ -142,7 +138,10 @@ function Home() {
 
   return (
     <>
-      <div className="HomeImage text-center" style={{ backgroundImage: `url(${background})` }}>
+      <div
+        className="HomeImage text-center"
+        style={{ backgroundImage: `url(${background})` }}
+      >
         <h1 className="display-4">Welcome to Git Connected</h1>
         <h2 className="lead">
           A place for developers and employers to get connected. Yeehaw!!
@@ -189,7 +188,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </ div>
+      </div>
     </>
   );
 }

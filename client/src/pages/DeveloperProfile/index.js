@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
-import Image from "./image"
-import AppliedTable from "../../components/developer/AppliedTable"
-import AppliedList from "../../components/developer/AppliedList"
-import data from "../../data"
+import Image from "./image";
+import AppliedTable from "../../components/developer/AppliedTable";
+import AppliedList from "../../components/developer/AppliedList";
 
 
 // style:
 import background from "../../assets/developerProfile-bg.jpg";
 import "./style.css";
+
+// API:
+import API from "../../utils/API";
 
 const columns = [
   {id: 1, label: "Job Name"},
@@ -16,6 +18,17 @@ const columns = [
 
 function DeveloperProfile(props) {
   console.log(props.userID)
+  const [currentUser, setCurrentUser] = useState({});
+
+  useEffect(()=>{
+    loadUser();
+  })
+
+  function loadUser() {
+    API.getDev(props.userID)
+      .then(data => setCurrentUser(data.data))
+      .catch(err => console.log(err));
+  }
   return (
     <>
       <Image backgroundImage={background}>
@@ -27,13 +40,14 @@ function DeveloperProfile(props) {
                 <div class="card-body">
                   <h2 class="card-title">About Me</h2>
                   <img src="" />
-                  <p class="card-text">First Name:</p>
-                  <p class="card-text">Last Name:</p>
-                  <p class="card-text">Email:</p>
-                  <p class="card-text">Type of Developer: </p>
-                  <p class="card-text">Type of Employment:</p>
-                  <p class="card-text">Primary Languages:</p>
-                  <p class="card-text">Summary:</p>
+                  <p class="card-text">First Name: {currentUser.firstName}</p>
+                  <p class="card-text">Last Name: {currentUser.lastName}</p>
+                  <p class="card-text">Email: {currentUser.emailAddress}</p>
+                  <p class="card-text">Type of Developer: {currentUser.devType} </p>
+                  <p class="card-text">Type of Employment: {currentUser.empType}</p>
+                  <p class="card-text">Primary Languages: {currentUser.language}</p>
+                  <p class="card-text">Summary: {currentUser.profile}</p>
+                  <p class="card-text">Summary: {currentUser.appliedTo}</p>
                 </div>
               </div>
             </div>
@@ -41,7 +55,7 @@ function DeveloperProfile(props) {
               <div class="card mb-4">
                 <div class="card-body">  
                   <h2 className="card-title">Applied Jobs</h2>
-                  <AppliedTable columns={columns} data={data} />
+                  <AppliedTable columns={columns} user={currentUser} />
                 </div>
               </div>
             </div>

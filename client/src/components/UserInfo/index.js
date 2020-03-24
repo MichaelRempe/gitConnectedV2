@@ -4,10 +4,11 @@ import React from "react";
 import "./style.css";
 
 const UserInfo = props => {
+  console.log(props.user);
   return (
     <div className="card">
-        <div className="card-title">props.name!</div>
-      <div className="card-body">props.Additional Info</div>
+      <div className="card-title">{`${props.user.firstName} ${props.user.lastName}`}</div>
+      <div className="card-body">{props.user.devType}</div>
     </div>
   );
 };
