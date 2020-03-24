@@ -111,9 +111,10 @@ header {
 
 .DevBackgroundImage{
     /* display: flex; */
-    background-size: 100vh;
-    
-    margin: 0
+    background-size: cover;
+    /* width: 100%;
+    margin: 0 */ 
+
 }
 
 @media screen and (max-width: 878px) {
