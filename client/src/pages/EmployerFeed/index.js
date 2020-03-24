@@ -12,6 +12,12 @@ import UserInfo from "../../components/UserInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
+import NavBar from "../../components/NavBar";
+
+import Footer from "../../components/Footer"
+
+import Container from "../../components/Container";
+
 //Style:
 import background from "../../assets/developerFeed-bg.png";
 import "./style.css";
@@ -44,7 +50,14 @@ function EmployerFeed(props) {
   };
 
   return (
+    <>
+    <Container>
+    <header>
+    <NavBar />
+    </header>
+    
     <div className="container-fluid">
+     
       <div className="row">
         <LeftPanel>
           <UserInfo />
@@ -73,6 +86,10 @@ function EmployerFeed(props) {
         </PopUpPanel>
       </div>
     </div>
+    {/* <footer><Footer /></footer> */}
+    </Container>
+    </>
+    
   );
 }
 

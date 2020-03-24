@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Navbar(props) {
+function NavBar(props) {
   return (
     <nav
       className="navbar fixed-top  justify-content-between"
@@ -24,4 +24,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+export default NavBar;

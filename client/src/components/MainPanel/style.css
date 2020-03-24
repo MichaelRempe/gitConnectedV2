@@ -1,6 +1,6 @@
-.mainPanel{
-    height:100%;
-    overflow-y: scroll;
+.middle{
+    height: calc(100vh - 10vh);
+    overflow-y: auto;
 }
 
 /* .middle{
