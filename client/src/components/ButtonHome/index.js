@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-const HomeButton = () => {
+const ButtonHome = () => {
   return (
     //navigates user to Home/Landing Page
-    <Link to="/">
-      <button className="btn btn-outline-dark btn-lg btn-block" role="button">
-        Home
-      </button>
+    <Link to="/" id="link">
+      
+        <p id="button">Home</p>
+     
     </Link>
   );
 };
 
-export default HomeButton;
+export default ButtonHome;

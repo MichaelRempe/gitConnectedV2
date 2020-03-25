@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Pages:
 import Home from "./pages/Home";
-import SelectForm from "./pages/Forms/UserType/SelectForm";
+import SelectForm from "./pages/Forms/UserType";
 // Developer
 import DeveloperFeed from "./pages/DeveloperFeed";
 import DeveloperProfile from "./pages/DeveloperProfile";

@@ -3,6 +3,7 @@ import API from "../../../utils/API";
 //Style:
 import background from "../../../assets/developerForm-bg.jpg";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
@@ -64,7 +65,7 @@ function DevCreateAccount() {
         newDeveloper._id = id;
         setFormObject(newDeveloper);
         console.log(formObject);
-        handleFormSubmit();
+        handleFormSubmit()
       });
     // [END createwithemail]
   }

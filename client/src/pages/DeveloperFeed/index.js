@@ -22,7 +22,7 @@ import API from "../../utils/API";
 import Container from "../../components/Container";
 
 //Navbar:
-import NavBar from "../../components/HomePageNav";
+import NavBar from "../../components/Navbar";
 
 //Slick
 // import "slick-carousel/slick/slick.css";

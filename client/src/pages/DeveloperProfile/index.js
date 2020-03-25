@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import Image from "./image";
 import AppliedTable from "../../components/developer/AppliedTable";
 import AppliedList from "../../components/developer/AppliedList";
+import Navbar from "../../components/Navbar";
 
 
 // style:
@@ -31,7 +32,9 @@ function DeveloperProfile(props) {
   }
   return (
     <>
+    <Navbar/>
       <Image backgroundImage={background}>
+        <br/>
         <h1 className="display-4" id="header">Hi {currentUser.firstName}</h1>
         <div className="container">
           <div className="row">
