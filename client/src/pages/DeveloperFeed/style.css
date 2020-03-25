@@ -80,28 +80,28 @@ body {
     height: 100vh; 
     padding-top: 10vh;
 }
-
-
-/* #main > article {
+#main > article {
     flex: 0 1 40vw;
-    /* overflow-y: scroll; */
+}
+    /* overflow-y: scroll;
 /* } */
 
-/* #main > nav {
+#main > nav {
     flex: 0 1 20vw; 
 }
-
+*/
 #main > aside {
     flex: 1;
-} */
+}
 
 /* #main > nav {
     order: -1;
 } */
 
-/* header, footer, article, nav, aside {
+/* header, article, nav, aside {
     padding: 1em;
 } */
+
 
 header {    
     height: 10vh;
@@ -110,13 +110,9 @@ header {
 
 
 .DevBackgroundImage{
-    /* display: flex; */
-    background-size: cover;
-    /* width: 100%;
-    margin: 0 */ 
-
+    background-size: cover;  
 }
-
+/* 
 @media screen and (max-width: 878px) {
     
     
@@ -135,4 +131,4 @@ header {
     #main > footer {
         display: none;
     }
-}
+} */
