@@ -1,14 +1,10 @@
 
 .card {
     display: flex;
-    padding: 5px;
-    /* width: 40vw; */
-    
+    padding: 5px;    
     margin: auto;
-    margin-bottom: 20px;
-    /* margin-top: 20px; */
-    position: relative;
-    /* border: none; */
+    margin-bottom: 20px;  
+    position: relative;   
     border-radius: 0rem;
 }
 

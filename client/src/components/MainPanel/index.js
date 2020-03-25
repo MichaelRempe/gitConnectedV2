@@ -3,7 +3,7 @@ import "./style.css";
 
 const MainPanel = (props)=>{
     return(
-        <div className="middle">
+        <div className="middle col-md-5">
             {props.children}
         </div>
     )
