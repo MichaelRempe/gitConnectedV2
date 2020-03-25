@@ -43,7 +43,7 @@ label {
 #header {
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
-  color: white;
+  color: white !important;
 }
 
 .card {
