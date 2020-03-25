@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import { Link, Route } from "react-router-dom";
 
+import HomePageNav from "../../components/HomePageNav"
+
 //Style
 import background from "../../assets/home-bg.jpeg";
 import "./style.css";
@@ -112,22 +114,22 @@ function Home() {
         var providerData = user.providerData;
         // [START_EXCLUDE]
         //Hides things if signed in
+        
         document.getElementById("email").style.display = "none";
         document.getElementById("password").style.display = "none";
         document.getElementById("getstarted").style.display = "none";
         document.getElementById("signup").style.display = "none";
         document.getElementById("signin").className = "col-12";
         document.getElementById("quickstart-sign-in").textContent = "Sign out";
-
-        // if (!emailVerified) {
-        //   document.getElementById("quickstart-verify-email").disabled = false;
-        // }
+        
+        
         // [END_EXCLUDE]
       } else {
         // User is signed out.
         // [START_EXCLUDE]
 
         document.getElementById("quickstart-sign-in").textContent = "Sign in";
+        document.getElementById("nav").style.display = "none";
 
         // [END_EXCLUDE]
       }
@@ -142,11 +144,13 @@ function Home() {
 
   return (
     <>
+    <div id="nav"><HomePageNav/></div>
+    
       <div
         className="HomeImage text-center"
         style={{ backgroundImage: `url(${background})` }}
       >
-        <h1 className="display-4">Welcome to Git Connected</h1>
+        <h1 className="display-4" id="welcome">Welcome to Git Connected</h1>
         <h2 className="lead">
           A place for developers and employers to get connected. Yeehaw!!
         </h2>

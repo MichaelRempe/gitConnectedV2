@@ -1,0 +1,7 @@
+#navbar {
+  background-color: rgb(255, 255, 255, 0.3);
+}
+#navbar #heading {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+}

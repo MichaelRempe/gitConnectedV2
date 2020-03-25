@@ -36,10 +36,8 @@
   padding-top: 45px;
 }
 
-.quickstart-user-details-container {
-  color: white;
-}
-
-#quickstart-account-details {
-  background-color: white;
+#welcome {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: bold;
 }
