@@ -3,6 +3,7 @@ import API from "../../../utils/API";
 // Style:
 import background from "../../../assets/employerForm-bg.jpg";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
@@ -101,7 +102,7 @@ function EmpCreateAccount() {
         className="EmpCreateImage text-center"
         style={{ backgroundImage: `url(${background})` }}
       >
-        <h1 className="display-4" id="employerHeader">Let's find you a developer (or more)</h1>
+        <h1 className="display-4" id="employerHeader">Let's find you a developer</h1>
         <h2 className="lead">
           Fill out the following to register your company.
         </h2>
@@ -176,6 +177,7 @@ function EmpCreateAccount() {
             </div>
           </div>
         </form>
+        <Link to="feed/emp">
         <button
           // onChange={handleInputChange}
           name="profile"
@@ -186,6 +188,7 @@ function EmpCreateAccount() {
         >
           Submit
         </button>
+        </Link>
       </div>
     </div>
   );

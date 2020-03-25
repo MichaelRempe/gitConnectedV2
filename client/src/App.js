@@ -1,6 +1,6 @@
 // Imports:
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 // Pages:
 import Home from "./pages/Home";
 import SelectForm from "./pages/Forms/UserType";
@@ -14,6 +14,9 @@ import EmployerProfile from "./pages/EmployerProfile";
 import CreateDeveloper from "./pages/Forms/CreateDeveloper";
 import CreateEmployer from "./pages/Forms/CreateEmployer";
 import PostJob from "./pages/Forms/PostJob";
+
+//History
+import history from './history';
 
 // Errors
 import ErrorPage from "./pages/ErrorPage";
@@ -32,7 +35,7 @@ function App() {
   return (
     <>
       <FirebaseAuthProvider {...config} firebase={firebase}>
-        <Router>
+        <Router history={history}>
           <IfFirebaseAuthed>
             {user => {
               return (

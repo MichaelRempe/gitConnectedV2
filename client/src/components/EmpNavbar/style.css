@@ -1,0 +1,22 @@
+nav {
+    
+    height: 10vh;
+    display: flex;
+    flex: 0 1 100vw;
+    /* margin-bottom: 1px; */
+}
+h1 {
+    font-family: 'Baloo Paaji 2', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.btn {
+    background-color: #AAABB8;
+    border-color: #AAABB8;   
+}
+
+
+

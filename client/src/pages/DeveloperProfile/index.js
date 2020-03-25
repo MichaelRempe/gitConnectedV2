@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Image from "./image";
 import AppliedTable from "../../components/developer/AppliedTable";
 import AppliedList from "../../components/developer/AppliedList";
-import Navbar from "../../components/Navbar";
+import DevNavbar from "../../components/DevNavbar";
 
 
 // style:
@@ -32,7 +32,7 @@ function DeveloperProfile(props) {
   }
   return (
     <>
-    <Navbar/>
+    <DevNavbar/>
       <Image backgroundImage={background}>
         <br/>
         <h1 className="display-4" id="header">Hi {currentUser.firstName}</h1>

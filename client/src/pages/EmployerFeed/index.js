@@ -5,14 +5,14 @@ import LeftPanel from "../../components/LeftPanel";
 import MainPanel from "../../components/MainPanel";
 import PopUpPanel from "../../components/PopUpPanel";
 import HomeButton from "../../components/ButtonHome";
-import ProfileButton from "../../components/ButtonProfile";
+import ProfileButton from "../../components/EmpButtonProfile";
 import PostJobButton from "../../components/ButtonCreateJob";
 
 import UserInfo from "../../components/UserInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
-import NavBar from "../../components/Navbar";
+import EmpNavbar from "../../components/EmpNavbar";
 
 import Footer from "../../components/Footer"
 
@@ -53,20 +53,20 @@ function EmployerFeed(props) {
     <>
     <Container>
     <header>
-    <NavBar />
+    <EmpNavbar />
     </header>
     
     <div className="container-fluid">
      
       <div className="row">
         <LeftPanel>
-          <UserInfo />
+          {/* <UserInfo /> */}
           <HomeButton />
           <ProfileButton />
           <PostJobButton />
         </LeftPanel>
 
-        <MainPanel>
+        {/* <MainPanel>
           {devList.map(dev => (
             <DeveloperCard
               setActive={populateActiveDev}
@@ -83,7 +83,7 @@ function EmployerFeed(props) {
             path={`${props.match.url}/${activeDev._id}`}
             render={props => <DeveloperDetails {...activeDev} />}
           />
-        </PopUpPanel>
+        </PopUpPanel> */}
       </div>
     </div>
     {/* <footer><Footer /></footer> */}

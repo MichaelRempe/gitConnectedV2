@@ -1,0 +1,9 @@
+#button {
+    background-color: rbg(255, 255, 255, 0.1);
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+    color: rgb(31, 31, 31);
+    font-size: 22px;
+    font-weight: bold;
+}
+
