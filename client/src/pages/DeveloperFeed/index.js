@@ -67,50 +67,6 @@ function DeveloperFeed(props) {
 
   return (
     <>
-      {/* <div className="row">
-        <div className="col-12">
-          <Navbar />
-        </div>
-      </div> */}
-
-      {/* <div className="nav">Header</div>
-      <div className="main">
-        <div className="left">Left</div>
-        <div className="middle">Middle</div>
-        <div className="right">Right</div>
-      </div>
-      <div className="bottom">Footer</div> */}
-
-      {/* <Container> */}
-
-      {/* <div className="row">        
-        <LeftPanel>
-          <UserInfo />
-          <HomeButton />
-          <ProfileButton />
-        </LeftPanel>       
-        
-        <MainPanel>
-          {jobList.map(job => (
-            <JobCard
-              setActive={populateActiveJob}
-              url={props.match.url}
-              data={job}
-              key={job._id}
-            />
-          ))}
-        </MainPanel>
-                 
-          <PopUpPanel>
-            <Route
-              exact
-              path={`${props.match.url}/${activeJob._id}`}
-              render={props => <JobDetails {...activeJob} />}
-            />
-          </PopUpPanel>        
-      </div> */}
-      {/* </Container> */}
-      {/*  </div> */}
       <div
         className="DevBackgroundImage"
         style={{ backgroundImage: `url(${background})` }}
