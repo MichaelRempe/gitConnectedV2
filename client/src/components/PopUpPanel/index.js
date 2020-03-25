@@ -3,7 +3,7 @@ import "./style.css";
 
 const PopUpPanel = (props)=>{
     return(
-        <div className="popup">
+        <div className="popup col-md-5">
             {props.children}
         </div>
     )
