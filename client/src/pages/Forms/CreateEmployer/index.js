@@ -138,12 +138,13 @@ function EmpCreateAccount() {
             />
           </div>
             <div className="form-group">
+              <label>Phone Number</label>
               <input
                 onChange={handleInputChange}
                 type="text"
                 className="form-control"
                 name="phone"
-                placeholder="Phone Number"
+                placeholder="123-456-7890"
               />
             </div>
             <div className="form-group">
@@ -176,7 +177,7 @@ function EmpCreateAccount() {
             </div>
           </div>
         </form>
-        <button
+        <button id="submitBtn"
           // onChange={handleInputChange}
           name="profile"
           type="button"

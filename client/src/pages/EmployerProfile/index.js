@@ -4,7 +4,7 @@ import Image from "./image"
 
 import PostedTable from "../../components/employer/PostedTable";
 import PostedList from "../../components/employer/PostedList";
-import Navbar from "../../components/NavBar";
+import Navbar from "../../components/Navbar";
 // import data from "../../data"
 
 

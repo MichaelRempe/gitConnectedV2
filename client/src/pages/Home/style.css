@@ -45,7 +45,7 @@
 }
 
 #signup {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 #signin {
@@ -55,5 +55,8 @@
   padding-bottom: 60px;
 }
 
+#quickstart-sign-in {
+  margin-top: -40px;
+}
 
 
