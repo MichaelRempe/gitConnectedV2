@@ -5,10 +5,10 @@ import "./style.css";
 const FeedButton = () => {
   return (
     //navigates user their feed page:
-    <Link to="/feed/dev">
-      <button className="btn btn-outline-dark btn-lg btn-block" role="button">
-        My Feed
-      </button>
+    <Link to="/feed/dev" id="link">
+    
+      <p id="button">Feed</p>
+      
     </Link>
   );
 };
