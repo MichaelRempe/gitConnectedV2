@@ -136,3 +136,7 @@ header {
         display: none;
     }
 }
+
+header {
+    color: black
+}

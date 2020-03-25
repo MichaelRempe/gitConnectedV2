@@ -22,7 +22,7 @@ import API from "../../utils/API";
 import Container from "../../components/Container";
 
 //Navbar:
-import NavBar from "../../components/Navbar";
+import NavBar from "../../components/HomePageNav";
 
 //Slick
 // import "slick-carousel/slick/slick.css";
@@ -116,8 +116,8 @@ function DeveloperFeed(props) {
         style={{ backgroundImage: `url(${background})` }}
       >
         <Container>
-          <header>
-            <NavBar />
+          <header  id="nav">
+            <NavBar/>
           </header>
           <div id="main">
             <nav>

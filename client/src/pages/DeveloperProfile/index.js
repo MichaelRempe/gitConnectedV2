@@ -32,10 +32,10 @@ function DeveloperProfile(props) {
   return (
     <>
       <Image backgroundImage={background}>
-        <h1 className="display-4">Welcome!</h1>
+        <h1 className="display-4" id="header">Hi {currentUser.firstName}</h1>
         <div className="container">
           <div className="row">
-            <div className="col-4">
+            <div className="col-lg-4 col-12">
               <div class="card mb-4">
                 <div class="card-body">
                   <h2 class="card-title">About Me</h2>
@@ -50,7 +50,7 @@ function DeveloperProfile(props) {
                 </div>
               </div>
             </div>
-            <div className="col-4">
+            <div className="col-lg-4 col-12">
               <div class="card mb-4">
                 <div class="card-body">  
                   <h2 className="card-title">Applied Jobs</h2>
@@ -58,7 +58,7 @@ function DeveloperProfile(props) {
                 </div>
               </div>
             </div>
-            <div className="col-4">
+            <div className="col-lg-4 col-12">
               <div class="card mb-4">
                 <div className="card-body">
                   <Route
