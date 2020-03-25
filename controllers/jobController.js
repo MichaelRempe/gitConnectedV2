@@ -19,10 +19,10 @@ module.exports = {
     // create NEW job, object data passed in through request body
     create: function(req, res){
         console.log(req.body);
-        db.Job
-        .create(req.body)
-        .then(document => res.json(document))
-        .catch(err => res.status(422).json(err));
+        // db.Job
+        // .create(req.body)
+        // .then(document => res.json(document))
+        // .catch(err => res.status(422).json(err));
     },
     // update SPECIFIC job via id and update data in request body
     update: function(req, res){

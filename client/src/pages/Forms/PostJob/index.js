@@ -24,6 +24,7 @@ function PostJob(props) {
     API.getEmployer(props.userID)
       .then(data => setCurrentUser(data.data))
       .catch(err => console.log(err));
+    // console.log(currentUser);
   }
 
   function handleInputChange(event) {
@@ -41,7 +42,7 @@ function PostJob(props) {
       alert("Required fields must be filled out!");
     }
     API.createJob(newJob)
-    .then(data=>console.log(data))
+      // .then(data => console.log(data.))
       // .then(newJob => API.postJobEmployer(currentUser._id, newJob.data._id).then(data=>{console.log(data)}))
       .catch(err => console.log(err));
   }
