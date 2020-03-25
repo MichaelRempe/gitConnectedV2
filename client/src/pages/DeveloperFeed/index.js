@@ -5,7 +5,7 @@ import LeftPanel from "../../components/LeftPanel";
 import MainPanel from "../../components/MainPanel";
 import PopUpPanel from "../../components/PopUpPanel";
 import HomeButton from "../../components/ButtonHome";
-import ProfileButton from "../../components/ButtonProfile";
+import ProfileButton from "../../components/DevButtonProfile";
 
 import UserInfo from "../../components/UserInfo";
 import JobCard from "../../components/JobCard";
@@ -22,7 +22,7 @@ import API from "../../utils/API";
 import Container from "../../components/Container";
 
 //Navbar:
-import NavBar from "../../components/NavBar";
+import DevNavbar from "../../components/DevNavbar";
 
 //Slick
 // import "slick-carousel/slick/slick.css";
@@ -73,7 +73,7 @@ function DeveloperFeed(props) {
       >
         <Container>
           <header  id="nav">
-            <NavBar/>
+            <DevNavbar/>
           </header>
           <div id="main">
             <nav>

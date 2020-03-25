@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Image from "./image"
 import PostedTable from "../../components/employer/PostedTable";
 import PostedList from "../../components/employer/PostedList";
-import Navbar from "../../components/NavBar";
+import EmpNavbar from "../../components/EmpNavbar";
 // import data from "../../data"
 
 
@@ -34,7 +34,7 @@ function EmployerProfile(props) {
 
   return (
     <>
-    <Navbar/>
+    <EmpNavbar/>
       <Image backgroundImage={background}>
         <br/>
         <h1 className="display-4">Hi {currentUser.companyName}</h1>

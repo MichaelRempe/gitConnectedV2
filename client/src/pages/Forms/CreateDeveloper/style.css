@@ -43,3 +43,8 @@
 label {
   color: white
 }
+#developerHeader {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
