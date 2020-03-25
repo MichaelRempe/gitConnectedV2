@@ -101,7 +101,7 @@ function EmpCreateAccount() {
         className="EmpCreateImage text-center"
         style={{ backgroundImage: `url(${background})` }}
       >
-        <h1 className="display-4">Let's find you a developer (or more)</h1>
+        <h1 className="display-4" id="employerHeader">Let's find you a developer (or more)</h1>
         <h2 className="lead">
           Fill out the following to register your company.
         </h2>

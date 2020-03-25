@@ -112,7 +112,7 @@ function DevCreateAccount() {
       className="DevCreateImage text-center"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <h1 className="display-4">Hello Fellow Developer!</h1>
+      <h1 className="display-4" id="developerHeader">Hello Fellow Developer!</h1>
       <h2 className="lead">
         Let's get started. Fill out the following to create an account.
       </h2>

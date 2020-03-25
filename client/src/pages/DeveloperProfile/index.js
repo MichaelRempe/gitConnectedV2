@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import Image from "./image";
 import AppliedTable from "../../components/developer/AppliedTable";
 import AppliedList from "../../components/developer/AppliedList";
-import Navbar from "../../components/NavBar";
+import Navbar from "../../components/Navbar";
 
 
 // style:
