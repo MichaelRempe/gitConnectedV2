@@ -117,7 +117,7 @@ function Home() {
         
         document.getElementById("email").style.display = "none";
         document.getElementById("password").style.display = "none";
-        document.getElementById("getstarted").style.display = "none";
+        // document.getElementById("getstarted").style.display = "none";
         document.getElementById("signup").style.display = "none";
         document.getElementById("signin").className = "col-12";
         document.getElementById("quickstart-sign-in").textContent = "Sign out";

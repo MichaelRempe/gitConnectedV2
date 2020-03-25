@@ -14,6 +14,6 @@ router
   .put(employerControl.update)
   .delete(employerControl.delete);
   
-router.route("/postJob/:id").put(employerControl.postedJob);
+// router.route("/postJob/:id").put(employerControl.postedJob);
 
 module.exports = router;
