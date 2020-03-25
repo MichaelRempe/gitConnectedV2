@@ -1,5 +1,5 @@
 .EmpCreateImage {
-  height: 700px;
+  height: 900px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -49,4 +49,8 @@ label {
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
   font-weight: bold;
+}
+
+#submitBtn {
+  margin-top: 100px;
 }

@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import Image from "./image"
+
 import PostedTable from "../../components/employer/PostedTable";
 import PostedList from "../../components/employer/PostedList";
+<<<<<<< HEAD
 import EmpNavbar from "../../components/EmpNavbar";
+=======
+import Navbar from "../../components/Navbar";
+>>>>>>> a3346358b8ce698a51de5626ef1bb5f796fccd6d
 // import data from "../../data"
 
 

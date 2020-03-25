@@ -1,5 +1,5 @@
 .DevCreateImage {
-  height: 900px;
+  height: 1000px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -47,4 +47,8 @@ label {
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
   font-weight: bold;
+}
+
+button {
+  margin-top: 30px;
 }

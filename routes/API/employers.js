@@ -2,14 +2,18 @@ const router = require("express").Router();
 const employerControl = require("../../controllers/employerController"); //CRUD operations
 
 //matches "api/employer" path
-router.route("/")
-    .get(employerControl.findAll)
-    .post(employerControl.create);
+router
+  .route("/")
+  .get(employerControl.findAll)
+  .post(employerControl.create);
 
 //matches "api/employer/:id" path
-router.route("/:id")
-    .get(employerControl.findById)
-    .put(employerControl.update)
-    .delete(employerControl.delete);
+router
+  .route("/:id")
+  .get(employerControl.findById)
+  .put(employerControl.update)
+  .delete(employerControl.delete);
+  
+router.route("/postJob/:id").put(employerControl.postedJob);
 
-module.exports=router;
+module.exports = router;

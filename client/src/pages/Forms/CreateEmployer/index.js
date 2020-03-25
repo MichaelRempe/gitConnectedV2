@@ -14,7 +14,7 @@ import "firebase/auth";
 
 function EmpCreateAccount() {
   const [formObject, setFormObject] = useState({
-    _id: "",
+    firebase_id: "",
     companyName: "",
     email: "",
     phone: "",
@@ -59,7 +59,7 @@ function EmpCreateAccount() {
         let newEmployer = formObject;
         firebase.auth().currentUser.sendEmailVerification();
         let id = firebase.auth().currentUser.uid.toString();
-        newEmployer._id = id;
+        newEmployer.firebase_id = id;
         setFormObject(newEmployer);
         console.log(formObject);
         handleFormSubmit();
@@ -139,12 +139,13 @@ function EmpCreateAccount() {
             />
           </div>
             <div className="form-group">
+              <label>Phone Number</label>
               <input
                 onChange={handleInputChange}
                 type="text"
                 className="form-control"
                 name="phone"
-                placeholder="Phone Number"
+                placeholder="123-456-7890"
               />
             </div>
             <div className="form-group">
@@ -178,7 +179,7 @@ function EmpCreateAccount() {
           </div>
         </form>
         <Link to="feed/emp">
-        <button
+        <button id="submitBtn"
           // onChange={handleInputChange}
           name="profile"
           type="button"

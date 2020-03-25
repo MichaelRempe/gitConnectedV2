@@ -10,7 +10,7 @@ const jobSchema = new Schema({
   position: {
     type: String,
     trim: true,
-    required: true,
+    // required: true,
     // enum: ["Front End Developer", "Back End Developer", "Full Stack Developer"]
   },
   empType:{
@@ -19,11 +19,13 @@ const jobSchema = new Schema({
     required: true
   },
   salary: {
-    type: Number,
+    type: String,
     required: true
   },
   applicants: [{ type: Schema.Types.ObjectId, ref: "Developer" }],
-  company: { type: Schema.Types.ObjectId, ref: "Employer" },
+  company_id:{
+    type: Schema.Types.ObjectId, ref: "Employer"
+  },
   description: {
     type: String,
     trim: true,

@@ -8,18 +8,22 @@ import HomeButton from "../../components/ButtonHome";
 import ProfileButton from "../../components/EmpButtonProfile";
 import PostJobButton from "../../components/ButtonCreateJob";
 
-import UserInfo from "../../components/UserInfo";
+import CompanyInfo from "../../components/CompnayInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
+<<<<<<< HEAD
 import EmpNavbar from "../../components/EmpNavbar";
 
 import Footer from "../../components/Footer"
+=======
+import NavBar from "../../components/Navbar"
+>>>>>>> a3346358b8ce698a51de5626ef1bb5f796fccd6d
 
 import Container from "../../components/Container";
 
 //Style:
-import background from "../../assets/developerFeed-bg.png";
+import background from "../../assets/employerFeed-bg.png";
 import "./style.css";
 
 // API:
@@ -28,17 +32,24 @@ import API from "../../utils/API";
 function EmployerFeed(props) {
   const [devList, setDevList] = useState([]);
   const [activeDev, setActiveDev] = useState({});
+  const [currentUser, setCurrentUser] = useState({});
   console.log(props.userID)
 
   //On page load, pull DEVELOPERS from API
   useEffect(() => {
     loadDevelopers();
+    loadUser();
   }, []);
 
   function loadDevelopers() {
     API.getAllDevs()
       .then(data => setDevList(data.data))
       .catch(err => console.log(err));
+  }
+  function loadUser(){
+    API.getEmployer(props.userID)
+      .then(data=>setCurrentUser(data.data))
+      .catch(err => console.log(err))
   }
 
   const populateActiveDev = id => {
@@ -51,22 +62,24 @@ function EmployerFeed(props) {
 
   return (
     <>
+    <div className="EmpBackgroundImage" style={{backgroundImage: `url(${background})`}}>
     <Container>
     <header>
     <EmpNavbar />
     </header>
     
-    <div className="container-fluid">
+    <div id="main">
      
-      <div className="row">
+      <nav>
         <LeftPanel>
-          {/* <UserInfo /> */}
+          <CompanyInfo user={currentUser}/>
           <HomeButton />
           <ProfileButton />
           <PostJobButton />
         </LeftPanel>
-
-        {/* <MainPanel>
+      </nav>
+      <article>
+        <MainPanel>
           {devList.map(dev => (
             <DeveloperCard
               setActive={populateActiveDev}
@@ -76,18 +89,21 @@ function EmployerFeed(props) {
             />
           ))}
         </MainPanel>
-
+      </article>
+      <aside>
         <PopUpPanel>
           <Route
             exact
             path={`${props.match.url}/${activeDev._id}`}
             render={props => <DeveloperDetails {...activeDev} />}
           />
-        </PopUpPanel> */}
+        </PopUpPanel>
+        </aside>
       </div>
-    </div>
+    
     {/* <footer><Footer /></footer> */}
     </Container>
+    </div>
     </>
     
   );

@@ -3,7 +3,11 @@ import { Route } from "react-router-dom";
 import Image from "./image";
 import AppliedTable from "../../components/developer/AppliedTable";
 import AppliedList from "../../components/developer/AppliedList";
+<<<<<<< HEAD
 import DevNavbar from "../../components/DevNavbar";
+=======
+import Navbar from "../../components/Navbar"
+>>>>>>> a3346358b8ce698a51de5626ef1bb5f796fccd6d
 
 
 // style:
