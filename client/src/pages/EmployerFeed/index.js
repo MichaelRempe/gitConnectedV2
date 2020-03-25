@@ -12,9 +12,7 @@ import UserInfo from "../../components/UserInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
-import NavBar from "../../components/Navbar";
-
-import Footer from "../../components/Footer"
+import NavBar from "../../components/NavBar";
 
 import Container from "../../components/Container";
 
@@ -52,20 +50,21 @@ function EmployerFeed(props) {
   return (
     <>
     <Container>
-    <header>
+    <header id="nav">
     <NavBar />
     </header>
     
-    <div className="container-fluid">
+    <div id="main">
      
-      <div className="row">
+      <nav>
         <LeftPanel>
           <UserInfo />
           <HomeButton />
           <ProfileButton />
           <PostJobButton />
         </LeftPanel>
-
+      </nav>
+      <article>
         <MainPanel>
           {devList.map(dev => (
             <DeveloperCard
@@ -76,7 +75,8 @@ function EmployerFeed(props) {
             />
           ))}
         </MainPanel>
-
+      </article>
+      <aside>
         <PopUpPanel>
           <Route
             exact
@@ -84,8 +84,9 @@ function EmployerFeed(props) {
             render={props => <DeveloperDetails {...activeDev} />}
           />
         </PopUpPanel>
+        </aside>
       </div>
-    </div>
+    
     {/* <footer><Footer /></footer> */}
     </Container>
     </>
