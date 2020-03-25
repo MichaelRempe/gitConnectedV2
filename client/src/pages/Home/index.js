@@ -145,56 +145,52 @@ function Home() {
   return (
     <>
     <div id="nav"><HomePageNav/></div>
-    
       <div
         className="HomeImage text-center"
         style={{ backgroundImage: `url(${background})` }}
       >
-        <h1 className="display-4" id="welcome">Welcome to Git Connected</h1>
+        <h1 id="welcome">Welcome to Git Connected</h1>
         <h2 className="lead">
-          A place for developers and employers to get connected. Yeehaw!!
+          A place for web developers and employers to get connected.
         </h2>
-        <p id="getstarted">Get started by logging in or signing up</p>
-        <br />
-        <div className="container signinForm" id="signinform">
-          <div className="row">
-            <div className="col-md-6 col-12 form-group" id="signin">
-              <input
-                // onChange={handleInputChange}
-                name="emailAddress"
-                id="email"
-                type="email"
-                className="form-control"
-                placeholder="Enter Email"
-              />
-              <br />
-              <input
-                // onChange={handleInputChange}
-                name="password"
-                type="password"
-                id="password"
-                className="form-control"
-                placeholder="Enter Password"
-              />
-              <br />
-              <Button
-                name="id"
-                id="quickstart-sign-in"
-                onClick={toggleSignIn}
-                color="primary"
-              >
-                Log in
+        {/* <p id="getstarted">Click on the Get Started button to sign up or login</p> */}
+        <div>
+            <Link to="/selectform">
+              <Button name="id" id="signup" color="success">
+                Get Started Here
               </Button>
-            </div>
-            <div className="col-md-6 col-12 form-group">
-              <br />
-              <Link to="/selectform">
-                <Button name="id" id="signup" color="success">
-                  Sign up
-                </Button>
-              </Link>
-            </div>
+            </Link>
+        </div>
+
+        <div className="container signinForm" id="signinform">
+          <div className="col-5" id="signin">
+            <input 
+              // onChange={handleInputChange}
+              name="emailAddress"
+              id="email"
+              type="email"
+              className="form-control"
+              placeholder="Enter Email"
+            />
+            <br />
+            <input
+              // onChange={handleInputChange}
+              name="password"
+              type="password"
+              id="password"
+              className="form-control"
+              placeholder="Enter Password"
+            />
           </div>
+          <Button
+            name="id"
+            id="quickstart-sign-in"
+            onClick={toggleSignIn}
+            color="primary"
+          >
+            Log in
+          </Button>
+          
         </div>
       </div>
     </>

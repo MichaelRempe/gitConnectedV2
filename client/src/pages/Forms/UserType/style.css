@@ -1,0 +1,13 @@
+#header {
+  color: black;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+}
+.jumbotron {
+  background-color: rgb(73, 140, 184, 0.5);
+}
+.btn {
+  background-color: rgba(85, 161, 212, 0.5) !important;
+}

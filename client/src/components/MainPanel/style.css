@@ -1,6 +1,7 @@
 .middle{
     height: calc(100vh - 10vh);
     overflow-y: auto;
+    /* flex: 0 1 40vw; */
 }
 
 /* .middle{

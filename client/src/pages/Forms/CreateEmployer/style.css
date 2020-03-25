@@ -1,5 +1,5 @@
 .EmpCreateImage {
-  height: 700px;
+  height: 900px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -42,5 +42,8 @@
 
 label {
   color: white;
-  
+}
+
+#submitBtn {
+  margin-top: 100px;
 }

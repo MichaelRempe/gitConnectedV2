@@ -12,14 +12,12 @@ import CompanyInfo from "../../components/CompnayInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
-import NavBar from "../../components/Navbar";
-
-import Footer from "../../components/Footer"
+import NavBar from "../../components/Navbar"
 
 import Container from "../../components/Container";
 
 //Style:
-import background from "../../assets/developerFeed-bg.png";
+import background from "../../assets/employerFeed-bg.png";
 import "./style.css";
 
 // API:
@@ -58,21 +56,23 @@ function EmployerFeed(props) {
 
   return (
     <>
+    <div className="EmpBackgroundImage" style={{backgroundImage: `url(${background})`}}>
     <Container>
-    <header>
+    <header id="nav">
     <NavBar />
     </header>
     
-    <div className="container-fluid">
+    <div id="main">
      
-      <div className="row">
+      <nav>
         <LeftPanel>
           <CompanyInfo user={currentUser}/>
           <HomeButton />
           <ProfileButton />
           <PostJobButton />
         </LeftPanel>
-
+      </nav>
+      <article>
         <MainPanel>
           {devList.map(dev => (
             <DeveloperCard
@@ -83,7 +83,8 @@ function EmployerFeed(props) {
             />
           ))}
         </MainPanel>
-
+      </article>
+      <aside>
         <PopUpPanel>
           <Route
             exact
@@ -91,10 +92,12 @@ function EmployerFeed(props) {
             render={props => <DeveloperDetails {...activeDev} />}
           />
         </PopUpPanel>
+        </aside>
       </div>
-    </div>
+    
     {/* <footer><Footer /></footer> */}
     </Container>
+    </div>
     </>
     
   );

@@ -40,3 +40,12 @@ label {
   padding-top: 80px;
 }
 
+#header {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  color: white !important;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.767);
+}

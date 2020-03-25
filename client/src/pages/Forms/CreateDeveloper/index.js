@@ -3,6 +3,7 @@ import API from "../../../utils/API";
 //Style:
 import background from "../../../assets/developerForm-bg.jpg";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
@@ -64,7 +65,7 @@ function DevCreateAccount() {
         newDeveloper.firebase_id = id;
         setFormObject(newDeveloper);
         console.log(formObject);
-        handleFormSubmit();
+        handleFormSubmit()
       });
     // [END createwithemail]
   }
@@ -241,22 +242,22 @@ function DevCreateAccount() {
               rows="3"
             ></textarea>
           </div>
-          <button
-            onChange={handleInputChange}
-            name="profile"
-            type="button"
-            className="btn btn-success"
-            disabled={
-              !(
-                formObject.firstName &&
-                formObject.lastName &&
-                formObject.emailAddress
-              )
-            }
-            onClick={handleSignUp}
-          >
-            Submit
-          </button>
+            <button
+              onChange={handleInputChange}
+              name="profile"
+              type="button"
+              className="btn btn-success"
+              disabled={
+                !(
+                  formObject.firstName &&
+                  formObject.lastName &&
+                  formObject.emailAddress
+                )
+              }
+              onClick={handleSignUp}
+            >
+              Submit
+            </button>
         </div>
       </form>
     </div>

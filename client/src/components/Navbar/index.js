@@ -1,26 +1,21 @@
 import React from "react";
 import "./style.css";
+import ButtonProfile from "../ButtonProfile";
+import ButtonHome from "../ButtonHome"
+import LogoutButton from "../LogoutButton"
+import { Navbar } from "react-bootstrap";
+
 
 function NavBar(props) {
   return (
-    <nav
-      className="navbar fixed-top  justify-content-between"
-      style={{backgroundColor: "#464866"}}
-     
-    >
-      <a className="navbar-brand" ><h1>gitConnected</h1> {props.name}</a>
-      <form className="form-inline">
-        <input
-          className="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button className="btn my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
-    </nav>
+    <div className="row nav">
+      <nav className="navbar fixed-top  justify-content-between" id="navbar">
+        <div className="col-6"><a className="navbar-brand" href="https://git-connected.com/"><h1 id="heading">Git Connected</h1></a></div>
+        <div className="col-1"><ButtonHome /></div>
+        <div className="col-1"><ButtonProfile /></div>
+        <div className="col-2"><LogoutButton /></div>
+      </nav>
+    </div>
   );
 }
 

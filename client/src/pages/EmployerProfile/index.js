@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import Image from "./image"
-import PostedTable from "../../components/employer/PostedTable"
-import PostedList from "../../components/employer/PostedList"
+
+import PostedTable from "../../components/employer/PostedTable";
+import PostedList from "../../components/employer/PostedList";
+import Navbar from "../../components/Navbar";
 // import data from "../../data"
 
 
@@ -33,8 +35,10 @@ function EmployerProfile(props) {
 
   return (
     <>
+    <Navbar/>
       <Image backgroundImage={background}>
-        <h1 className="display-4">Welcome!</h1>
+        <br/>
+        <h1 className="display-4">Hi {currentUser.companyName}</h1>
         <div className="container">
           <div className="row">
             <div className="col-4">
