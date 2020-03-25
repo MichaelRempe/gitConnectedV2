@@ -6,7 +6,7 @@ function SelectForm() {
   return (
   <div className="container">
     <div className="jumbotron">
-      <h1 id="header">What brings you to Git Connected?</h1>
+      <h1 className="display-4" id="header">What brings you to Git Connected?</h1>
       <hr className="my-4"/>
       <ul className="list-group">
         <a className="list-group-item btn btn-light" type='button' href='/dev-create-account'>I'm a developer!</a>
