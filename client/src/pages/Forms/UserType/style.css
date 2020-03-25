@@ -2,6 +2,6 @@
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
   font-weight: bold;
-  color: black;
+  color: black !important;
   text-align: center;
 }

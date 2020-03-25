@@ -242,22 +242,22 @@ function DevCreateAccount() {
               rows="3"
             ></textarea>
           </div>
-          <button
-            onChange={handleInputChange}
-            name="profile"
-            type="button"
-            className="btn btn-success"
-            disabled={
-              !(
-                formObject.firstName &&
-                formObject.lastName &&
-                formObject.emailAddress
-              )
-            }
-            onClick={handleSignUp}
-          >
-            Submit
-          </button>
+            <button
+              onChange={handleInputChange}
+              name="profile"
+              type="button"
+              className="btn btn-success"
+              disabled={
+                !(
+                  formObject.firstName &&
+                  formObject.lastName &&
+                  formObject.emailAddress
+                )
+              }
+              onClick={handleSignUp}
+            >
+              Submit
+            </button>
         </div>
       </form>
     </div>
