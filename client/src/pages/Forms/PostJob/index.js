@@ -14,15 +14,17 @@ function PostJob(props) {
     description: undefined,
     company_id: ""
   });
-  // const [currentUser, setCurrentUser] = useState({});
+  const [currentUser, setCurrentUser] = useState({});
 
+  useEffect(() => {
+    loadUser();
+  });
 
-  // loadUser(){
-  //   API.getEmployer(props.userID)   
-  //     .then(data => setCurrentUser(data.data))      
-  //     .catch(err => console.log(err));
-       
-  // }
+  function loadUser() {
+    API.getEmployer(props.userID)
+      .then(data => setCurrentUser(data.data))
+      .catch(err => console.log(err));
+  }
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -32,15 +34,15 @@ function PostJob(props) {
 
   function handleFormSubmit(event) {
     let newJob = formObject;
-
-    newJob.company_id = props.userID;
-    console.log(newJob)
+    newJob.company_id = currentUser._id;
+    console.log(newJob);
     event.preventDefault();
     if (!formObject) {
       alert("Required fields must be filled out!");
     }
     API.createJob(newJob)
-      .then(data => console.log(data))
+    .then(data=>console.log(data))
+      // .then(newJob => API.postJobEmployer(currentUser._id, newJob.data._id).then(data=>{console.log(data)}))
       .catch(err => console.log(err));
   }
 

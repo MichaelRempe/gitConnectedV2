@@ -24,6 +24,14 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     // update SPECIFIC employer via id and update data in request body
+    // postedJob: function(req, res){
+    //     // console.log(req.body)
+    //     db.Employer
+    //     // .findByIdAndUpdate({_id: req.params.id}, {$push: {posted: req.body}})
+    //     .findByIdAndUpdate({_id:req.params.id}, {$push: {posted:req.body}}, {new:true})
+    //     .then(updatedDoc => res.json(updatedDoc))
+    //     .catch(err => res.status(422).json(err))
+    // },
     update: function(req, res){
         db.Employer
         .findByIdAndUpdate({_id: req.params.id}, req.body)
