@@ -117,13 +117,13 @@ header {
 
 }
 
-@media screen and (max-width: 878px) {
+/* @media screen and (max-width: 878px) {
     
     
     #main{
         display: block;
     }
-}
+} */
 
 @media screen and (max-width: 878px) {    
     #main > nav {
