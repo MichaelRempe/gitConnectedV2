@@ -16,15 +16,13 @@ body {
 #main > article {
     flex: 0 1 40vw;
 }
-    /* overflow-y: scroll;
-/* } */
 
 #main > nav {
     flex: 0 1 20vw; 
 }
 */
 #main > aside {
-    flex: 1;
+    flex: 40vw;
 }
 
 /* #main > nav {
