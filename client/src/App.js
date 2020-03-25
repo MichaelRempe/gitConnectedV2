@@ -1,9 +1,9 @@
 // Imports:
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 // Pages:
 import Home from "./pages/Home";
-import SelectForm from "./pages/Forms/UserType/SelectForm";
+import SelectForm from "./pages/Forms/UserType";
 // Developer
 import DeveloperFeed from "./pages/DeveloperFeed";
 import DeveloperProfile from "./pages/DeveloperProfile";
@@ -39,7 +39,7 @@ function App() {
                 <>
                   <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/selectform" component={SelectForm} />
+                    <Route exact path="/selectform"><Redirect to="/"/></Route>
                     {/* Developer Paths */}
                     <Route
                       path="/feed/dev/"
@@ -47,6 +47,8 @@ function App() {
                         <DeveloperFeed {...props} userID={user.user.uid} />
                       )}
                     />
+                    <Route exact path="/dev-create-account"><Redirect to="/"/></Route>
+                    <Route exact path="/emp-create-account"><Redirect to="/"/></Route>
                     <Route
                       path="/profile/dev"
                       render={props => (
@@ -92,13 +94,11 @@ function App() {
               <Route path="/profile/emp" component={Unauth} />
               {/* Forms */}
               <Route
-                exact
-                path="/dev-create-account"
+                exact path="/dev-create-account"
                 component={CreateDeveloper}
               />
               <Route
-                exact
-                path="/emp-create-account"
+                exact path="/emp-create-account"
                 component={CreateEmployer}
               />
               <Route exact path="/postjob" component={Unauth} />

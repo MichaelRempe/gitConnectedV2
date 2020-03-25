@@ -116,8 +116,8 @@ function DeveloperFeed(props) {
         style={{ backgroundImage: `url(${background})` }}
       >
         <Container>
-          <header>
-            <NavBar />
+          <header  id="nav">
+            <NavBar/>
           </header>
           <div id="main">
             <nav>
