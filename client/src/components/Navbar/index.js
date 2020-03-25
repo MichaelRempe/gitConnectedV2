@@ -10,7 +10,7 @@ function NavBar(props) {
     >
       <a className="navbar-brand" ><h1>gitConnected</h1> {props.name}</a>
       <form className="form-inline">
-        <input
+        {/* <input
           className="form-control mr-sm-2"
           type="search"
           placeholder="Search"
@@ -18,7 +18,7 @@ function NavBar(props) {
         />
         <button className="btn my-2 my-sm-0" type="submit">
           Search
-        </button>
+        </button> */}
       </form>
     </nav>
   );

@@ -22,7 +22,7 @@ import API from "../../utils/API";
 import Container from "../../components/Container";
 
 //Navbar:
-import NavBar from "../../components/Navbar";
+import NavBar from "../../components/NavBar";
 
 //Slick
 // import "slick-carousel/slick/slick.css";
@@ -121,12 +121,14 @@ function DeveloperFeed(props) {
           </header>
           <div id="main">
             <nav>
+           
               <LeftPanel>
                 <UserInfo user={currentUser}>
                   <HomeButton />
                   <ProfileButton />
                 </UserInfo>
               </LeftPanel>
+           
             </nav>
             <article>
               <MainPanel>
