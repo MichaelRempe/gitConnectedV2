@@ -111,8 +111,12 @@ function Home() {
         var uid = user.uid;
         var providerData = user.providerData;
         // [START_EXCLUDE]
+        //Hides things if signed in
         document.getElementById("email").style.display = "none";
         document.getElementById("password").style.display = "none";
+        document.getElementById("getstarted").style.display = "none";
+        document.getElementById("signup").style.display = "none";
+        document.getElementById("signin").className = "col-12";
         document.getElementById("quickstart-sign-in").textContent = "Sign out";
 
         // if (!emailVerified) {
@@ -146,11 +150,11 @@ function Home() {
         <h2 className="lead">
           A place for developers and employers to get connected. Yeehaw!!
         </h2>
-        <p>Get started by logging in or signing up</p>
+        <p id="getstarted">Get started by logging in or signing up</p>
         <br />
-        <div className="container signinForm">
+        <div className="container signinForm" id="signinform">
           <div className="row">
-            <div className="col-md-6 col-12 form-group">
+            <div className="col-md-6 col-12 form-group" id="signin">
               <input
                 // onChange={handleInputChange}
                 name="emailAddress"
@@ -181,7 +185,7 @@ function Home() {
             <div className="col-md-6 col-12 form-group">
               <br />
               <Link to="/selectform">
-                <Button name="id" color="success">
+                <Button name="id" id="signup" color="success">
                   Sign up
                 </Button>
               </Link>
