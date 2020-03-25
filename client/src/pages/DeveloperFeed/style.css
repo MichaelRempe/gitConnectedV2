@@ -13,6 +13,26 @@ body {
     height: 100vh; 
     padding-top: 10vh;
 }
+#main > article {
+    flex: 0 1 40vw;
+}
+
+#main > nav {
+    flex: 0 1 20vw; 
+}
+*/
+#main > aside {
+    flex: 40vw;
+}
+
+/* #main > nav {
+    order: -1;
+} */
+
+/* header, article, nav, aside {
+    padding: 1em;
+} */
+
 
 header {    
     height: 10vh;
@@ -21,15 +41,10 @@ header {
 
 
 .DevBackgroundImage{
-    /* display: flex; */
-    background-size: cover;
-    height: 100vh;
-    /* width: 100%;
-    margin: 0 */ 
-
+    background-size: cover;  
 }
-
-/* @media screen and (max-width: 878px) {
+/* 
+@media screen and (max-width: 878px) {
     
     
     #main{
@@ -37,14 +52,3 @@ header {
     }
 } */
 
-@media screen and (max-width: 878px) {    
-    #main > nav {
-        height: 20vh;
-    }   
-}
-
-@media screen and (max-width: 878) {
-    #main > footer {
-        display: none;
-    }
-}
