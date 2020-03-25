@@ -12,7 +12,7 @@ module.exports = {
     // query DB for SPECIFIC employer by ID (passed in via request body)
     findById: function(req, res){
         db.Employer
-        .findById(req.params.id)
+        .findOne({firebase_id:req.params.id})
         .then(document => res.json(document))
         .catch(err => res.status(422).json(err));
     },

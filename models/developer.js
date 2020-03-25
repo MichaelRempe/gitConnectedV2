@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const positionSchema = require("./job");
 
 const developerSchema = new Schema({
-  _id: {
+  firebase_id: {
     type: String,
     required: true,
     unique: true

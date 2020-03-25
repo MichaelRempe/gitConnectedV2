@@ -13,7 +13,7 @@ import "firebase/auth";
 
 function DevCreateAccount() {
   const [formObject, setFormObject] = useState({
-    _id:"",
+    firebase_id:"",
     firstName: "",
     lastName: "",
     emailAddress: "",
@@ -61,7 +61,7 @@ function DevCreateAccount() {
         let newDeveloper = formObject;
         firebase.auth().currentUser.sendEmailVerification();
         let id = firebase.auth().currentUser.uid.toString();
-        newDeveloper._id = id;
+        newDeveloper.firebase_id = id;
         setFormObject(newDeveloper);
         console.log(formObject);
         handleFormSubmit();

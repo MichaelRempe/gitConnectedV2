@@ -50,7 +50,6 @@ function DeveloperFeed(props) {
       .catch(err => console.log(err));
   }
   function loadUser() {
-    console.log("hit");
     API.getDev(props.userID)   
       .then(data => setCurrentUser(data.data))      
       .catch(err => console.log(err));

@@ -18,6 +18,7 @@ module.exports = {
     },
     // create NEW job, object data passed in through request body
     create: function(req, res){
+        console.log(req)
         db.Job
         .create(req.body)
         .then(document => res.json(document))

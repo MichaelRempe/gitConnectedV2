@@ -8,7 +8,7 @@ import HomeButton from "../../components/ButtonHome";
 import ProfileButton from "../../components/ButtonProfile";
 import PostJobButton from "../../components/ButtonCreateJob";
 
-import UserInfo from "../../components/UserInfo";
+import CompanyInfo from "../../components/CompnayInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
@@ -28,17 +28,24 @@ import API from "../../utils/API";
 function EmployerFeed(props) {
   const [devList, setDevList] = useState([]);
   const [activeDev, setActiveDev] = useState({});
+  const [currentUser, setCurrentUser] = useState({});
   console.log(props.userID)
 
   //On page load, pull DEVELOPERS from API
   useEffect(() => {
     loadDevelopers();
+    loadUser();
   }, []);
 
   function loadDevelopers() {
     API.getAllDevs()
       .then(data => setDevList(data.data))
       .catch(err => console.log(err));
+  }
+  function loadUser(){
+    API.getEmployer(props.userID)
+      .then(data=>setCurrentUser(data.data))
+      .catch(err => console.log(err))
   }
 
   const populateActiveDev = id => {
@@ -60,7 +67,7 @@ function EmployerFeed(props) {
      
       <div className="row">
         <LeftPanel>
-          <UserInfo />
+          <CompanyInfo user={currentUser}/>
           <HomeButton />
           <ProfileButton />
           <PostJobButton />

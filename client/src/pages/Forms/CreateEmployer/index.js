@@ -13,7 +13,7 @@ import "firebase/auth";
 
 function EmpCreateAccount() {
   const [formObject, setFormObject] = useState({
-    _id: "",
+    firebase_id: "",
     companyName: "",
     email: "",
     phone: "",
@@ -58,7 +58,7 @@ function EmpCreateAccount() {
         let newEmployer = formObject;
         firebase.auth().currentUser.sendEmailVerification();
         let id = firebase.auth().currentUser.uid.toString();
-        newEmployer._id = id;
+        newEmployer.firebase_id = id;
         setFormObject(newEmployer);
         console.log(formObject);
         handleFormSubmit();
