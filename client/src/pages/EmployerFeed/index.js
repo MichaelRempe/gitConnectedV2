@@ -17,7 +17,7 @@ import NavBar from "../../components/NavBar";
 import Container from "../../components/Container";
 
 //Style:
-import background from "../../assets/developerFeed-bg.png";
+import background from "../../assets/employerFeed-bg.png";
 import "./style.css";
 
 // API:
@@ -49,6 +49,7 @@ function EmployerFeed(props) {
 
   return (
     <>
+    <div className="EmpBackgroundImage" style={{backgroundImage: `url(${background})`}}>
     <Container>
     <header id="nav">
     <NavBar />
@@ -89,6 +90,7 @@ function EmployerFeed(props) {
     
     {/* <footer><Footer /></footer> */}
     </Container>
+    </div>
     </>
     
   );
