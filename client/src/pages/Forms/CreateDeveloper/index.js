@@ -112,7 +112,7 @@ function DevCreateAccount() {
       className="DevCreateImage text-center"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <h1 className="display-4">Hello Fellow Developer!</h1>
+      <h1 className="display-4" id="developerHeader">Hello Fellow Developer!</h1>
       <h2 className="lead">
         Let's get started. Fill out the following to create an account.
       </h2>
@@ -242,8 +242,9 @@ function DevCreateAccount() {
               rows="3"
             ></textarea>
           </div>
+          <Link to="feed/dev">
             <button
-              onChange={handleInputChange}
+              // onChange={handleInputChange}
               name="profile"
               type="button"
               className="btn btn-success"
@@ -258,6 +259,7 @@ function DevCreateAccount() {
             >
               Submit
             </button>
+          </Link>
         </div>
       </form>
     </div>

@@ -3,7 +3,10 @@ import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import { Link, Route } from "react-router-dom";
 
-import HomePageNav from "../../components/HomePageNav"
+import HomePageNav from "../../components/HomePageNav";
+import API from "../../utils/API"
+
+import history from '../../history';
 
 //Style
 import background from "../../assets/home-bg.jpeg";
@@ -17,23 +20,9 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 
 function Home() {
-  const devID = "5e69316dc528fd5c40dbace2";
-  const empID = "5e69316dc528fd5c40dbace1";
 
-  const [admin, setAdmin] = useState({
-    id: "Mongoose id"
-  });
-
-  function devClick(event) {
-    const { name, value } = event.target;
-    setAdmin({ ...admin, [name]: devID });
-    console.log(admin);
-  }
-  function empClick(event) {
-    const { name, value } = event.target;
-    setAdmin({ ...admin, [name]: empID });
-    console.log(admin);
-  }
+  const [userType, setUserType] = useState();
+  const [pathName, setPathName] = useState({pathName: ""});
 
   // Email validation
   function validateEmail(mail) {
@@ -51,15 +40,13 @@ function Home() {
   function toggleSignIn() {
     if (firebase.auth().currentUser) {
       // [START signout]
-      firebase.auth().signOut();
+      firebase.auth().signOut()
+      
       // [END signout]
     } else {
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
-      if (email.length < 4) {
-        alert("Please enter an email address.");
-        return;
-      }
+      validateEmail(email)
       if (password.length < 4) {
         alert("Please enter a password.");
         return;
@@ -86,6 +73,7 @@ function Home() {
           document.getElementById("quickstart-sign-in").disabled = false;
           // [END_EXCLUDE]
         });
+         
       // [END authwithemail]
     }
     document.getElementById("quickstart-sign-in").disabled = true;
@@ -117,12 +105,37 @@ function Home() {
         
         document.getElementById("email").style.display = "none";
         document.getElementById("password").style.display = "none";
-        // document.getElementById("getstarted").style.display = "none";
         document.getElementById("signup").style.display = "none";
         document.getElementById("signin").className = "col-12";
         document.getElementById("quickstart-sign-in").textContent = "Sign out";
-        
-        
+
+        API.getDev(uid)
+        .then(data=>{
+          if (data.data == null) {
+            return
+          } else {
+            console.log(data);
+            setUserType("developer");
+            console.log(userType)
+            setPathName("/feed/dev")
+            history.push(pathName)
+          }
+        })
+        .catch(err=>console.log(err))
+
+      API.getEmployer(uid)
+        .then(data=>{
+          if (data.data == null) {
+            return
+          } else {
+            console.log(data);
+            setUserType("employer");
+            console.log(userType)
+            setPathName("/feed/emp")
+            history.push(pathName)
+          }
+        })
+        .catch(err=>console.log(err))
         // [END_EXCLUDE]
       } else {
         // User is signed out.
@@ -130,6 +143,8 @@ function Home() {
 
         document.getElementById("quickstart-sign-in").textContent = "Sign in";
         document.getElementById("nav").style.display = "none";
+
+
 
         // [END_EXCLUDE]
       }

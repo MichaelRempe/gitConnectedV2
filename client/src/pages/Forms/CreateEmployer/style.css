@@ -42,6 +42,13 @@
 
 label {
   color: white;
+  
+}
+
+#employerHeader {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: bold;
 }
 
 #submitBtn {
