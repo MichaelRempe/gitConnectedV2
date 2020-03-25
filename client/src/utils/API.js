@@ -25,7 +25,6 @@ export default {
     getAllEmployers :   function(){return axios.get("/api/employer");},
     getEmployer     :   function(id){return axios.get("/api/employer/"+id);},
     updateEmployer  :   function(id, updateData){return axios.put("/api/employer/"+id, updateData);},
-    postJobEmployer :   function(id, jobID){return axios.put("/api/employer/postJob/"+id, jobID);},
     deleteEmployer  :   function(id){return axios.delete("/api/employer/"+id);},
     createEmployer  :   function(empData){return axios.post("/api/employer", empData);}
 };

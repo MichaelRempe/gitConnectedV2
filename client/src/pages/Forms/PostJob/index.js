@@ -34,16 +34,15 @@ function PostJob(props) {
   }
 
   function handleFormSubmit(event) {
+    event.preventDefault();
+
     let newJob = formObject;
     newJob.company_id = currentUser._id;
-    console.log(newJob);
-    event.preventDefault();
     if (!formObject) {
       alert("Required fields must be filled out!");
     }
     API.createJob(newJob)
-      // .then(data => console.log(data.))
-      // .then(newJob => API.postJobEmployer(currentUser._id, newJob.data._id).then(data=>{console.log(data)}))
+      .then(data => console.log(data.data))
       .catch(err => console.log(err));
   }
 

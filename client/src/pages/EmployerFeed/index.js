@@ -12,13 +12,9 @@ import CompanyInfo from "../../components/CompnayInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
-<<<<<<< HEAD
 import EmpNavbar from "../../components/EmpNavbar";
 
 import Footer from "../../components/Footer"
-=======
-import NavBar from "../../components/Navbar"
->>>>>>> a3346358b8ce698a51de5626ef1bb5f796fccd6d
 
 import Container from "../../components/Container";
 
@@ -48,7 +44,8 @@ function EmployerFeed(props) {
   }
   function loadUser(){
     API.getEmployer(props.userID)
-      .then(data=>setCurrentUser(data.data))
+      .then(data=> {console.log(data.data)
+        setCurrentUser(data.data)})
       .catch(err => console.log(err))
   }
 
