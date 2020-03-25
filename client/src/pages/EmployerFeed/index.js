@@ -12,7 +12,7 @@ import UserInfo from "../../components/UserInfo";
 import DeveloperCard from "../../components/DevCard";
 import DeveloperDetails from "../../components/DevDetails";
 
-import NavBar from "../../components/NavBar";
+import NavBar from "../../components/Navbar"
 
 import Container from "../../components/Container";
 

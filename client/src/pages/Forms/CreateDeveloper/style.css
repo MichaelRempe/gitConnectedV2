@@ -1,5 +1,5 @@
 .DevCreateImage {
-  height: 900px;
+  height: 1000px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -42,4 +42,8 @@
 
 label {
   color: white
+}
+
+button {
+  margin-top: 30px;
 }
