@@ -3,6 +3,7 @@ import "./style.css";
 import ButtonProfile from "../ButtonProfile";
 import ButtonHome from "../ButtonHome"
 import LogoutButton from "../LogoutButton"
+import { Navbar } from "react-bootstrap";
 
 
 function NavBar(props) {
