@@ -47,8 +47,8 @@ function App() {
                         <DeveloperFeed {...props} userID={user.user.uid} />
                       )}
                     />
-                    <Route exact path="/dev-create-account"><Redirect to="/"/></Route>
-                    <Route exact path="/emp-create-account"><Redirect to="/"/></Route>
+                    <Route exact path="/dev-create-account"><Redirect to="/feed/dev"/></Route>
+                    <Route exact path="/emp-create-account"><Redirect to="/feed/emp"/></Route>
                     <Route
                       path="/profile/dev"
                       render={props => (
