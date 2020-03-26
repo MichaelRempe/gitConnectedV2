@@ -31,12 +31,9 @@ import Slider from "react-slick";
 
 function DeveloperFeed(props) {
   const [jobList, setJobList] = useState([]);
-  const [activeJob, setActiveJob] = useState([]);
+  // const [activeJob, setActiveJob] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
-  console.log(currentUser)
-  console.log(props.userID);
-
- 
+  
   //On page load, pull in jobs from API
   useEffect(() => {
     loadJobs();
@@ -55,14 +52,14 @@ function DeveloperFeed(props) {
       .catch(err => console.log(err));
        
   }
-  // Set Active Job in popUP panel
-  const populateActiveJob = id => {
-    jobList.map(job => {
-      if (job._id === id) {
-        setActiveJob(job);
-      }
-    });
-  };
+  // // Set Active Job in popUP panel
+  // const populateActiveJob = id => {
+  //   jobList.map(job => {
+  //     if (job._id === id) {
+  //       setActiveJob(job);
+  //     }
+  //   });
+  // };
 
   return (
     <>
@@ -87,24 +84,25 @@ function DeveloperFeed(props) {
               <MainPanel>
                 {jobList.map(job => (
                   <JobCard
-                    setActive={populateActiveJob}
-                    url={props.match.url}
+                    // setActive={populateActiveJob}
+                    // url={props.match.url}
                     data={job}
                     key={job._id}
+                    user={currentUser}
                   />
                 ))}
               </MainPanel>
             </article>
 
-            <aside>
-              <PopUpPanel>
-                <Route
+            {/* <aside> */}
+              {/* <PopUpPanel> */}
+                {/* <Route
                   exact
                   path={`${props.match.url}/${activeJob._id}`}
-                  render={props => <JobDetails {...activeJob} />}
-                />
-              </PopUpPanel>
-            </aside>
+                  render={props => <JobDetails {...activeJob} user={currentUser} />}
+                /> */}
+              {/* </PopUpPanel> */}
+            {/* </aside> */}
           </div>
         </Container>
       </div>

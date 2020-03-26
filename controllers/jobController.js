@@ -31,8 +31,20 @@ module.exports = {
   },
   // update SPECIFIC job via id and update data in request body
   update: function(req, res) {
-    db.Job.findByIdAndUpdate({ _id: req.params.id }, req.body)
-      .then(updatedDoc => res.json(updatedDoc))
+    console.log(req.body.id);
+    console.log(req.params.id);
+    db.Job.findByIdAndUpdate(req.params.id, {
+      $push: { applicants: req.body.id }
+    })
+      .then(updatedDoc => {
+        console.log(updatedDoc);
+        db.Developer.findByIdAndUpdate(req.body.id, {
+          $push: { appliedTo: req.params.id }
+        })
+          .then(data => console.log(data))
+          .catch(err => console.log(err));
+        res.json(updatedDoc);
+      })
       .catch(err => res.status(422).json(err));
   },
   // delete SPECIFIC job via id and removes data in db

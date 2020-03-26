@@ -1,25 +1,17 @@
 import React from "react";
 import { Link, Route } from "react-router-dom";
 import "./style.css";
+import API from "../../utils/API";
 // import nextId from "react-id-generator";
 
 function JobCard(props) {
-  console.log(props);
+  function applyTo() {
+    // event.preventDefault();
+    console.log(props.data._id);
+    console.log(props.user._id);
+    API.updateJob(props.data._id, {id:props.user._id});
+  }
   return (
-// <<<<<<< HEAD
-//     <>
-//       <div className="card">
-       
-//         <div className="card-body">
-//         <h1 className="card-text">Company Name</h1>
-//           <h5 className="card-title">{props.data.title}</h5>
-//           <p className="card-text">{props.data.position}</p>
-//           <p className="card-text">{props.data.salary}</p>
-//           <p className="card-text">{props.data.empType}</p>
-//           <Link to={`${props.url}/${props.data._id }`} key={props.data._id} className="btn btn-primary" onClick={(e)=> props.setActive(props.data._id)}>Apply!</Link>
-//         </div>
-// =======
-
     <div className="card job">
       <div className="card-header">Position: {props.data.title}</div>
       <div className="card-body">
@@ -28,14 +20,28 @@ function JobCard(props) {
         <p className="card-text">Requirements: {props.data.empType}</p>
         <p className="card-text">Description: {props.data.description}</p>
         <br />
-        <Link
+        <button
+          type="button"
+          class="btn btn-secondary"
+          style={{ position: "absolute", marginTop: "10px", bottom: "5px" }}
+          onClick={function(event) {
+            event.preventDefault();
+            applyTo();
+          }}
+        >
+          Apply Now
+        </button>
+
+        {/* <Link
           to={`${props.url}/${props.data._id}`}
           key={props.data._id}
           className="btn btn-primary apply"
-          onClick={e => props.setActive(props.data._id)}
+          onClick={e => {
+            props.setActive(props.data._id);
+          }}
         >
-         Details
-        </Link>
+          Details
+        </Link> */}
       </div>
     </div>
   );
