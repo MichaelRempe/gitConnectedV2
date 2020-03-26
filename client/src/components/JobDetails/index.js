@@ -2,7 +2,15 @@ import React from "react";
 import API from "../../utils/API";
 import "./style.css";
 
+
 function jobDetails(props) {
+  console.log(props.user);
+  console.log(props._id);
+
+  function applyTo(){
+    API.updateJob(props._id, props.user._id)
+  }
+
   return (
     <div className="card">
       <div className="card-headers">Company Name</div>
@@ -19,7 +27,7 @@ function jobDetails(props) {
         type="button"
         class="btn btn-secondary"
         style={{ position: "absolute", marginTop: "10px", bottom: "5px" }}
-        onClick={console.log("click")}
+        onClick={applyTo()}
       >
         Apply Now
       </button>
